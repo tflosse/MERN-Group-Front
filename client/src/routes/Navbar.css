@@ -1,0 +1,30 @@
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    border: 2px solid black;
+}
+
+.logo {
+    margin-left: 5px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Navbar-dashboard {
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+
+.Navbar-personal {
+    justify-content: flex-end;
+    margin-right: 20px;
+}

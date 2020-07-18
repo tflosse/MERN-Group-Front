@@ -1,0 +1,28 @@
+.dashboard-creative-idea {
+    margin-top:20px;
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left:20px;
+    margin-right: 20px;
+}
+.dashboard-title {
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-keytags {
+    display: flex;
+}
+
+.dashboard-ind-key {
+    margin-right: 10px;
+    background-color:rgb(243, 215, 178)
+}
+
+.dashboard-comments-title {
+    font-weight: bold;
+}
+
+.dashboard-comments-section{
+    margin-left:20px;
+}
