@@ -40,7 +40,7 @@ function Dashboard () {
             keywords: ['coffee', 'ready when you are','fresh']
         },
         personal:{
-            isAnonymous: false,
+            isAnonymous: true,
             username:{
                 name: 'Jim Chen'
             },
