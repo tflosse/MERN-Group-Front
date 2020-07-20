@@ -1,4 +1,4 @@
-nav {
+/* nav {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     border: 2px solid black;
@@ -27,4 +27,37 @@ li {
 .Navbar-personal {
     justify-content: flex-end;
     margin-right: 20px;
+} */
+.navbar{
+    background-color: #f7f7f8 !important; 
+    min-height: 50px; 
+    min-width: 300px !important; 
+    overflow-x: hidden ! important; 
+    border: 2px solid #41bab2; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;  
+  }
+
+.Logo {
+    max-width: 50px; 
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(243,168,40, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  }
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none; 
+    box-shadow: 0 0 0 1pt #41bab2; 
+}
+.navbar-toggler:active {
+    outline: 0 0 0 1pt #1d1c17 !important; 
+}
+.navLink {
+    color: #1d1c17; 
+}
+.navLink:hover {
+    text-decoration: underline #f3a928; 
+    color: #41bab2; 
 }

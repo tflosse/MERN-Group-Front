@@ -2,6 +2,7 @@ import React from 'react'
 import './Dashboard.css'
 
 function Dashboard () {
+    const checkmark = '✔';
     // let ideaSchema = {
     //     createive_idea: {
     //         title: { type: String, required: true },
@@ -49,16 +50,19 @@ function Dashboard () {
         otherUserResponse:{
             comments:[
                 {
-                    comment:'this idea sucks',
-                    user: 'Nick'
+                    comment:'This idea needs development. What exactly are you proposing?',
+                    user: 'Nick', 
+                    timestamp: "3 Hours ago"
                 },
                 {
-                    comment: 'i like this idea',
-                    user: 'Tam'
+                    comment: 'I like this idea',
+                    user: 'Tam', 
+                    timestamp: "1 hours ago"
                 },
                 {
-                    comment: 'go get a life',
-                    user: 'Andrew'
+                    comment: 'That is probably going to involve a timer, a robot, and a button you press to start the robot. You will also need to calculate a working average hygiene prep time which may vary per customer.',
+                    user: 'Andrew', 
+                    timestamp: "15 mins ago"
                 }
             ]
         }
@@ -74,8 +78,11 @@ function Dashboard () {
     if(idea.otherUserResponse.comments[0]){
         userComments=idea.otherUserResponse.comments.map((comm)=>{
         return (
-            <div>
+            <div className="CommentContainer">
+                <div className="Comment-user-and-timestamp">
             <p className='dashboard-comment-name'>{comm.user}</p>
+            <p className='dashboard-comment-timestamp'>{comm.timestamp}</p>
+            </div>
             <p className='dashboard-comment-body'>{comm.comment}</p>
             </div>
         )
@@ -85,9 +92,32 @@ function Dashboard () {
     
 
     return (
+        <>
+        <div className="FeedHeaderContainer">
+        <div className="FeedHeader">
+          <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
+        </div>
+        <h4 className="Brilliant"> What Brilliant Ideas did the world have while you were gone?</h4>
+        </div>
+        <div className="MainFeed">
         <div className='dashboard-creative-idea'>
             <div className='dashboard-title'>
+                <div className="Title-and-votes">
+                <div className="IconsBoxPost">
+                  <div className="PostUpBox">
+                    <i className="material-icons">keyboard_arrow_up</i>
+                    <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595186577/Untitled_8_1_ymtxrr.png" alt="whole lightbulb"/>
+                  </div>
+                  <div className="PostCountBox">
+                        <p>0</p>
+                  </div>
+                  <div className="PostDownBox">
+                    <i className="material-icons">keyboard_arrow_down</i>
+                    <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595188165/Untitled_8_2_glwnue.png" alt="Broken lightbulb"/>
+                  </div>
+                </div>
                 <h1 className='dashboard-idea-title'>{idea.creative_idea.title}</h1>
+                </div>
                 <h1 className='dashboard-idea-author'>{authorName}</h1>
             </div>
             <div className='dashboard-desc'>
@@ -96,10 +126,23 @@ function Dashboard () {
                 <div className='dashboard-keytags'> {keytags}</div>
             </div>
             <div className='dashboard-comments-section'>
+                <div className="BarrierContainer">
+                <img className="CommentBarrier" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595191527/Untitled_12_taesgk.png" alt="Telephone Wire"/>
+                </div>
                 <p className='dashboard-comments-title'>Comments</p>
                 {userComments}
             </div>
+            <div className="AddComment">
+                <form className="CommentForm">
+                    <p> Anon {checkmark} </p>
+                    <input placeholder="Leave a Comment"/> 
+                    <input placeholder="Add Hashtags"/>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
+        </div>
+        </> 
     )
 }
 
