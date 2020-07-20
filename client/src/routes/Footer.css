@@ -1,4 +1,4 @@
 .footer {
-    position: absolute;
-    top: 93%;
+    display: flex; 
+    margin-left: 4vw; 
 }

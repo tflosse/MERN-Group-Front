@@ -1,14 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .dashboard-creative-idea {
-    margin-top:20px;
+    margin-top:70px; 
     border: 1px solid black;
     padding-left: 20px;
     padding-right: 20px;
     margin-left:20px;
     margin-right: 20px;
+    margin-bottom: 70px; 
 }
 .dashboard-title {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; 
+}
+.Title-and-votes {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+}
+.IconsBoxPost {
+margin-top: 2vh; 
+display: flex; 
+flex-direction: column; 
+align-items: center; 
+justify-items: center; 
+}
+.PostUpBox {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;  
+}
+.PostCountBox {
+    align-self: flex-start; 
+    margin-left: 2vw; 
+}
+.PostDownBox {
+    margin-top: -2vh; 
+}
+
+.dashboard-idea-title {
+    margin-top: 4vh; 
+    font-size: 20px; 
+    max-width: 50vw;
+}
+.dashboard-idea-author {
+    margin-top: 3vh;
+    font-size: 15px; 
+    color: #f3a928; 
 }
 .dashboard-keytags {
     display: flex;
@@ -16,7 +54,7 @@
 
 .dashboard-ind-key {
     margin-right: 10px;
-    background-color:rgb(243, 215, 178)
+    background-color: #41bab2; 
 }
 
 .dashboard-comments-title {
@@ -26,3 +64,80 @@
 .dashboard-comments-section{
     margin-left:20px;
 }
+.FeedHeaderContainer {
+    margin-top: 80px; 
+    display: flex; 
+    justify-content: center; 
+}
+.FeedHeader {
+    background-image: url('https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116401/Untitled_7_3_cuwdyn.png');
+    background-size: cover; 
+    height: 300px;  
+}
+.Brilliant {
+    margin-top: 80px; 
+    font-family: 'Bebas Neue', cursive; 
+}
+.FeedHeaderAnimation {
+    height: 300px; 
+    animation: glow3 2s alternate infinite; 
+}
+@keyframes glow3 {
+    0%{ opacity: 0;}
+    50%{opacity: 1;}
+    100%{ opacity: 0;}
+}
+.Mainfeed {
+    margin-bottom: 200px !important; 
+}
+.LightbulbIcon {
+    height: 28px; 
+    margin-left: 1vw; 
+}
+.BarrierContainer {
+    display: flex; 
+    justify-content: center; 
+}
+.CommentBarrier {
+    margin-top: 2vh; 
+    margin-bottom: 2vh; 
+    width: 80vw; 
+}
+.Comment-user-and-timestamp {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+}
+.CommentContainer {
+   border: 2px dotted #41bab2; 
+   padding-left: 2vw; 
+   padding-right: 2vw; 
+   padding-top: 1vh; 
+   padding-bottom: 1vh; 
+   margin-bottom: 2vh; 
+}
+.AddComment {
+    margin-left: 5vw;
+    margin-bottom: 3vh;  
+}
+.CommentForm {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+.CommentForm input {
+    border: 2px solid #41bab2; 
+    border-radius: 4px; 
+    margin-bottom: 2vh; 
+}
+.CommentForm button {
+    background-color: #41bab2; 
+    border-radius: 3px; 
+    font-weight: bold; 
+}
+
+@media only screen and (min-width: 600px) {
+    .dashboard-idea-title {
+        font-size: 30px; 
+    }
+  }
