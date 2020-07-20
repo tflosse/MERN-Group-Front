@@ -1,36 +1,8 @@
-import React from 'react'
-import './Dashboard.css'
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import './Idea.css'; 
 
-function Dashboard () {
+function Idea () {
     const checkmark = '✔';
-    // let ideaSchema = {
-    //     createive_idea: {
-    //         title: { type: String, required: true },
-    //         description: { type: String, required: true },
-    //         pictures: [{
-    //             src: String,
-    //             alt: String
-    //         }],
-    //         keywords: [Strings],
-    //         votes: { type: Number, default: 0 }
-    //         // counter
-    //     },
-    //     personal: {
-    //         isAnonymous: Boolean,
-    //         username: {
-    //             ref: "Username",
-    //             type: mongoose.Schema.Types.ObjectId
-    //         }
-    //         canContact: { type: Boolean, default: true }
-    //     },
-    //     otherUserResponse {
-    //         comments: [{
-    //             ref: "Comment",
-    //             type: mongoose.Schema.Types.ObjectId
-    //     }]},
-    //     {timestamps: true}
-    // }
     let idea={
         creative_idea: {
             title: "coffee when you are done with hygiene",
@@ -90,8 +62,6 @@ function Dashboard () {
         })
     } else userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
     
-    
-
     return (
         <>
         <div className="FeedUltimateContainer">
@@ -99,7 +69,6 @@ function Dashboard () {
         <div className="FeedHeader">
           <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
         </div>
-        <h4 className="Brilliant"> What Brilliant Ideas did the world have while you were gone?</h4>
         </div>
         <div className="MainFeed">
         <div className='dashboard-creative-idea'>
@@ -118,7 +87,7 @@ function Dashboard () {
                     <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595188165/Untitled_8_2_glwnue.png" alt="Broken lightbulb"/>
                   </div>
                 </div>
-               <Link to={'/ideas/' + idea.creative_idea.title}> <h1 className='dashboard-idea-title feedtitle'>{idea.creative_idea.title}</h1></Link> 
+                <h1 className='dashboard-idea-title ideatitle'>{idea.creative_idea.title}</h1>
                 </div>
                 <h1 className='dashboard-idea-author'>{authorName}</h1>
             </div>
@@ -126,7 +95,21 @@ function Dashboard () {
                 <p>{idea.creative_idea.description}</p>
                 {/* <p>keywords:</p> */}
                 <div className='dashboard-keytags'> {keytags}</div>
-                <p className="comment-redirect"> (Click Title for redirect to full outline and comments)</p>
+            </div>
+            <div className='dashboard-comments-section'>
+                <div className="BarrierContainer">
+                <img className="CommentBarrier" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595191527/Untitled_12_taesgk.png" alt="Telephone Wire"/>
+                </div>
+                <p className='dashboard-comments-title'>Comments</p>
+                {userComments}
+            </div>
+            <div className="AddComment">
+                <form className="CommentForm">
+                    <p> Anon {checkmark} </p>
+                    <input placeholder="Leave a Comment"/> 
+                    <input placeholder="Add Hashtags"/>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
         </div>
@@ -135,4 +118,4 @@ function Dashboard () {
     )
 }
 
-export default Dashboard
+export default Idea 
