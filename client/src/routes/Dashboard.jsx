@@ -1,5 +1,6 @@
 import React from 'react'
 import './Dashboard.css'
+import IdeaForm from './IdeaForm'
 
 function Dashboard () {
     const checkmark = '✔';
@@ -93,6 +94,7 @@ function Dashboard () {
 
     return (
         <>
+
         <div className="FeedHeaderContainer">
         <div className="FeedHeader">
           <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
@@ -139,7 +141,9 @@ function Dashboard () {
                     <input placeholder="Add Hashtags"/>
                     <button type="submit">Submit</button>
                 </form>
+                <IdeaForm  />
             </div>
+
         </div>
         </div>
         </> 
