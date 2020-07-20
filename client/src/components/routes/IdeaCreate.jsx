@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // import axios from "axios";
 // import ideasApi from '../../apiConfig'
-import IdeaForm from "./IdeaForm";
-import Layout from "./Layout";
+import IdeaForm from "../shared/IdeaForm";
+import Layout from "../shared/Layout";
 import './IdeaCreate.css';
 
 const IdeaCreate = (props) => {
