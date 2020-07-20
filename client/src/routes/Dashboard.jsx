@@ -1,5 +1,6 @@
 import React from 'react'
 import './Dashboard.css'
+import Profile from "../components/auth/ProfilePage"
 
 function Dashboard () {
     const checkmark = '✔';
@@ -78,6 +79,7 @@ function Dashboard () {
     if(idea.otherUserResponse.comments[0]){
         userComments=idea.otherUserResponse.comments.map((comm)=>{
         return (
+            <>
             <div className="CommentContainer">
                 <div className="Comment-user-and-timestamp">
             <p className='dashboard-comment-name'>{comm.user}</p>
@@ -85,6 +87,7 @@ function Dashboard () {
             </div>
             <p className='dashboard-comment-body'>{comm.comment}</p>
             </div>
+            </>
         )
         })
     } else userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
@@ -93,7 +96,9 @@ function Dashboard () {
 
     return (
         <>
+        <Profile />
         <div className="FeedHeaderContainer">
+        
         <div className="FeedHeader">
           <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
         </div>
