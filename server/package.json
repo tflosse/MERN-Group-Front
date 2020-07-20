@@ -1,0 +1,28 @@
+{
+  "name": "mern-group-front",
+  "version": "1.0.0",
+  "description": "- Rectangles     - Nav Routes/Links - Circles     - Button - Triangles     - Get data - Diamonds     - Forms",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tflosse/MERN-Group-Front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tflosse/MERN-Group-Front/issues"
+  },
+  "homepage": "https://github.com/tflosse/MERN-Group-Front#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0"
+  }
+}
