@@ -36,7 +36,7 @@ function NavBar () {
                       </Link>
                       </a>
                       <a className="nav-item nav-link" >
-                          <Link to='/' className='navLink'> 
+                          <Link to='/ideacreate' className='navLink'> 
                           <div className="togglewrapperrr" data-toggle="collapse" data-target=".navbar-collapse.show">
                               CREATE YOUR IDEA 
                               </div></Link>

@@ -1,0 +1,10 @@
+.Post-submit-container {
+    padding-top: 50px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-content: center; 
+}
+.Post-submit-container img {
+    width: 200px; 
+}
