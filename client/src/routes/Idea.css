@@ -1,3 +1,6 @@
+.FullIdea {
+    margin-top: 100px; 
+}
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .dashboard-creative-idea {
@@ -42,7 +45,6 @@ justify-items: center;
     margin-top: 4vh; 
     font-size: 20px; 
     max-width: 50vw;
-    color: #41bab2; 
 }
 .dashboard-idea-author {
     margin-top: 3vh;
@@ -103,7 +105,6 @@ justify-items: center;
     margin-top: 2vh; 
     margin-bottom: 2vh; 
     width: 80vw; 
-    max-width: 440px; 
 }
 .Comment-user-and-timestamp {
     display: flex; 
@@ -143,66 +144,12 @@ justify-items: center;
         font-size: 30px; 
     }
   }
-.material-icons:hover {
-    color: #f3a928; 
-}
-.feedtitle:hover {
-    text-decoration: underline #f3a928 !important; 
-}
 .dashboard-idea-title {
-    color: #41bab2 !important; 
+    color: #1d1c17; 
 }
-
-@media only screen and (min-width: 728px) {
-
-    .PostCountBox {
-        align-self: flex-start; 
-        margin-left: 8px; 
-    }
-    
-    .dashboard-idea-title {
-        margin-top: 4vh; 
-        font-size: 20px; 
-        max-width: 365px; 
-        color: #41bab2; 
-    }
-    .dashboard-idea-author {
-        margin-top: 3vh;
-        font-size: 15px; 
-        color: #f3a928; 
-    }
-    
-    
-    .dashboard-comments-section{
-        margin-left:20px;
-    }
-    .FeedHeaderContainer {
-        margin-top: 80px; 
-        display: flex; 
-        justify-content: center; 
-    }
-    
-    
-    .Mainfeed {
-        margin-bottom: 300px !important; 
-    }
-    
-    .CommentBarrier {
-        margin-top: 2vh; 
-        margin-bottom: 2vh; 
-        width: 550px; 
-    }
-    
-    .AddComment {
-        margin-left: 40px; 
-        margin-bottom: 3vh;  
-    }
-    
-    .FeedUltimateContainer {
-    Max-width: 728px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-items: center; 
-    }
+.dashboard-idea-title:hover {
+    text-decoration: none; 
+}
+.ideatitle {
+    color: #1d1c17 !important; 
 }
