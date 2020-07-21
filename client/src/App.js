@@ -1,29 +1,39 @@
-import React, {Component, useState, useEffect} from 'react';
-import {Route, Link, Switch} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { SecureRoute, ImplicitCallback } from '@okta/okta-react';
-import config from './app.config';
 
-// Component imports
-import Layout from './components/shared/Layout';
-import AppLogin from './components/login/Login';
-import Dashboard from './components/routes/Dashboard';
-import Idea from './components/routes/Idea';
-import IdeaCreate from './components/routes/IdeaCreate';
+// Auth Components
+// import config from './app.config';
+// import RegistrationForm from './authComponents/auth/RegistrationForm';
+// import LoginPage from './authComponents/auth/LoginPage';
+// import ProfilePage from './authComponents/auth/ProfilePage';
+// import Navigation from './authComponents/shared/Navigation';
 
-// Styles:
+// Ideate Components
+import Layout from './appComponents/shared/Layout';
+import Dashboard from './appComponents/routes/Dashboard';
+import Idea from './appComponents/routes/Idea';
+import IdeaCreate from './appComponents/routes/IdeaCreate';
+
 import './App.css';
 
-function App() {
-
-  return (
-    <Switch> 
-      <Layout>
-        <Route exact path='/login' component={AppLogin} />
-        <Route exact path='/' component={Dashboard} />
-        <Route exact path='/ideas/:ideatitle' render={routerProps => <Idea {...routerProps}/>}/>
-        <Route exact path='/ideacreate' render={routerProps => <IdeaCreate {...routerProps}/>}/>
-      </Layout>
-    </Switch> 
-  )
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Switch> 
+            <Layout>
+                <Route path="/" exact component={Dashboard} />
+                {/* <Route path="/login" render={() => <LoginPage baseUrl={config.url} />} />
+                <Route path="/implicit/callback" component={ImplicitCallback} />
+                <Route path="/register" component={RegistrationForm} /> */}
+                <Route exact path='/ideas/:ideatitle' render={routerProps => <Idea {...routerProps}/>}/>
+                <Route exact path='/ideacreate' render={routerProps => <IdeaCreate {...routerProps}/>}/>
+                {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
+            </Layout>
+        </Switch> 
+        {/* <Navigation /> */}
+      </div>
+    );
   }
-export default App;
+}

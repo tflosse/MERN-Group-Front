@@ -8,24 +8,23 @@ import config from './app.config';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-function onAuthRequired({ history }) {
-  history.push('/login');
-}
+// function onAuthRequired({ history }) {
+//   history.push('/login');
+// }
 
 ReactDOM.render(
   <Router>
-    <Security
+    {/* <Security
       issuer={config.issuer}
       client_id={config.client_id}
       redirect_uri={config.redirect_uri}
       onAuthRequired={onAuthRequired}
-    >
+    > */}
       <App />
-    </Security>
+    {/* </Security> */}
   </Router>,
   document.getElementById('root')
 );
-
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
