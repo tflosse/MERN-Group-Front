@@ -3,8 +3,7 @@ const app = express();
 const cors = require('cors')
 const logger = require('morgan');
 
-//declare controllers here:
-// const songsController = require('./controllers/SongRoutes');
+const usersController = require('./controllers/userRoutes');
 
 const PORT = process.env.PORT || 4000
 
@@ -13,8 +12,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logger('dev'));
 
-// use controllers here:
-// app.use('/songs', songsController);
+// app.use controllers here
+app.use('/accounts', usersController);
 
 app.set("port", process.env.PORT || 4000);
 
