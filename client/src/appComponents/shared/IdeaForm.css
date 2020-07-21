@@ -1,0 +1,41 @@
+.NewIdeaForm {
+    display: flex; 
+    flex-direction: column; 
+    align-content: center; 
+    padding: 20px; 
+    border: 2px solid #1d1c17; 
+    border-radius: 5px; 
+}
+.Description-input {
+ border: solid 2px #41bab2; 
+ font-family: 'Lato', sans-serif; 
+ box-sizing: border-box; 
+ max-height: none; 
+ resize: none; 
+ font-size: 12px; 
+}
+.Title-input {
+    border: solid 2px #41bab2; 
+    font-family: 'Lato', sans-serif; 
+   }
+.NewIdeaForm {
+    font-family: 'Bebas Neue'; 
+    margin-bottom: 10vh; 
+}
+.Idea-create-buttons {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+}
+
+.submit, .cancel {
+    background-color: #41bab2; 
+    width: 80px; 
+}
+.Idea-Create-Div-box {
+    display: flex; 
+    flex-direction: column; 
+}
+.Description-input::placeholder {
+    font-size: 15px; 
+}

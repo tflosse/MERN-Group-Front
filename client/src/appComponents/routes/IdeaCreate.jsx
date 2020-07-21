@@ -36,7 +36,7 @@ const IdeaCreate = (props) => {
     <>
     <div className="Post-submit-container">
       <div className="SubmitIconContainer">
-        <img src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595276128/light-bulb-icon-cartoon-isolated-black-and-white-vector-25740587_2_rcuki4.png" alt="Lightbulb Image"/>
+        <img src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595352949/light-bulb-icon-cartoon-isolated-black-and-white-vector-25740587_1_1_sa7lpw.png" alt="Lightbulb Image"/>
       </div>
       <IdeaForm
         // item={input}
