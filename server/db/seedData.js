@@ -4,7 +4,74 @@ const seedUsers=[
         password: "unprotectedpw",
         email: "jo.wang@fakemail.com",
         photo: { src: "https://randomuser.me/api/portraits/women/90.jpg", alt: "joanna-wang"},
-        ideas: [{}]
+        ideas: [{
+            authorInfo: {
+                isAnonymous: false,
+                username: "joanna90403",
+                canContact: false
+            },
+            ideaBody: {
+                    title: "",
+                    description: "",
+                    pictures: [{
+                        src: String,
+                        alt: String
+                    }],
+                    keywords: [],
+                    // should be an array of strings
+                    votes: { type: Number, default: 0 }
+                    // counter
+            },
+            comments: [
+                {
+                    username: "",
+                    isAnonymous: false,
+                    commentBody: ""
+                },
+                {
+                    username: "",
+                    isAnonymous: false,
+                    commentBody: ""
+                },
+                {
+                    isAnonymous: true,
+                    commentBody: ""
+                }]
+        },
+        {
+            authorInfo: {
+                isAnonymous: false,
+                username: "joanna90403",
+                canContact: false
+            },
+            ideaBody: {
+                    title: "",
+                    description: "",
+                    pictures: [{
+                        src: String,
+                        alt: String
+                    }],
+                    keywords: [],
+                    // should be an array of strings
+                    votes: { type: Number, default: 0 }
+                    // counter
+            },
+            comments: [
+                {
+                    username: "",
+                    isAnonymous: false,
+                    commentBody: ""
+                },
+                {
+                    username: "",
+                    isAnonymous: false,
+                    commentBody: ""
+                },
+                {
+                    isAnonymous: true,
+                    commentBody: ""
+                }]
+        }]
     },
     {
         username: "ryan-horton",
@@ -58,15 +125,210 @@ const seedUsers=[
 ];
 
 const seedPosts=[
-
-];
-
-const seedComments=[
-
-];
-
-const seedMessages=[
-
+    {
+        authorInfo: {
+            isAnonymous: false,
+            username: "joanna90403",
+            canContact: false
+        },
+        ideaBody: {
+                title: "",
+                description: "",
+                pictures: [{
+                    src: String,
+                    alt: String
+                }],
+                keywords: [],
+                // should be an array of strings
+                votes: { type: Number, default: 0 }
+                // counter
+        },
+        comments: [
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                isAnonymous: true,
+                commentBody: ""
+            }]
+    },
+    {
+        authorInfo: {
+            isAnonymous: false,
+            username: "joanna90403",
+            canContact: false
+        },
+        ideaBody: {
+                title: "",
+                description: "",
+                pictures: [{
+                    src: String,
+                    alt: String
+                }],
+                keywords: [],
+                // should be an array of strings
+                votes: { type: Number, default: 0 }
+                // counter
+        },
+        comments: [
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                isAnonymous: true,
+                commentBody: ""
+            }]
+    },
+    {
+        authorInfo: {
+            isAnonymous: false,
+            username: "joanna90403",
+            canContact: false
+        },
+        ideaBody: {
+                title: "",
+                description: "",
+                pictures: [{
+                    src: String,
+                    alt: String
+                }],
+                keywords: [],
+                // should be an array of strings
+                votes: { type: Number, default: 0 }
+                // counter
+        },
+        comments: [
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                isAnonymous: true,
+                commentBody: ""
+            }]
+    },
+    {
+        authorInfo: {
+            isAnonymous: false,
+            username: "joanna90403",
+            canContact: false
+        },
+        ideaBody: {
+                title: "",
+                description: "",
+                pictures: [{
+                    src: String,
+                    alt: String
+                }],
+                keywords: [],
+                // should be an array of strings
+                votes: { type: Number, default: 0 }
+                // counter
+        },
+        comments: [
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                isAnonymous: true,
+                commentBody: ""
+            }]
+    },
+    {
+        authorInfo: {
+            isAnonymous: false,
+            username: "joanna90403",
+            canContact: false
+        },
+        ideaBody: {
+                title: "",
+                description: "",
+                pictures: [{
+                    src: String,
+                    alt: String
+                }],
+                keywords: [],
+                // should be an array of strings
+                votes: { type: Number, default: 0 }
+                // counter
+        },
+        comments: [
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                isAnonymous: true,
+                commentBody: ""
+            }]
+    },
+    {
+        authorInfo: {
+            isAnonymous: false,
+            username: "joanna90403",
+            canContact: false
+        },
+        ideaBody: {
+                title: "",
+                description: "",
+                pictures: [{
+                    src: String,
+                    alt: String
+                }],
+                keywords: [],
+                // should be an array of strings
+                votes: { type: Number, default: 0 }
+                // counter
+        },
+        comments: [
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                username: "",
+                isAnonymous: false,
+                commentBody: ""
+            },
+            {
+                isAnonymous: true,
+                commentBody: ""
+            }]
+    }
 ];
 
 const seedArrays=[seedUsers, seedPosts, seedComments, seedMessages];

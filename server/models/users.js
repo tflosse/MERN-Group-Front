@@ -5,16 +5,17 @@ const userSchema = new mongoose.Schema(
         username: { type: String, required: true },
         password: { type: String, required: true },
         email: String,
+        canContact: { type: Boolean, default: true },
         photo: { src: String, alt: String},
         ideas: [{
             ref: "Idea",
             type: mongoose.Schema.Types.ObjectId
         }],
-        saved: [{
-            ref: "Idea",
-            type: mongoose.Schema.Types.ObjectId,
-            default: null
-        }]
+        // saved: [{
+        //     ref: "Idea",
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     default: null
+        // }]
     },
 );
 

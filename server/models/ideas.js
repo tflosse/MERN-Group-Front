@@ -2,28 +2,21 @@ const mongoose = require('../db/connection')
 
 const ideaSchema = new mongoose.Schema(
     {
-        authorInfo: {
-            isAnonymous: Boolean,
-            username: {
-                ref: "Username",
-                type: mongoose.Schema.Types.ObjectId
-            },
-            canContact: { type: Boolean, default: true }
-        }
-    },
-    {   
-        ideaBody: {
-            title: { type: String, required: true },
-            description: { type: String, required: true },
-            pictures: [{
-                src: String,
-                alt: String
-            }],
-            keywords: [],
-            // should be an array of strings
-            votes: { type: Number, default: 0 }
-            // counter
-        }
+        username: {
+            ref: "Username",
+            type: mongoose.Schema.Types.ObjectId
+        },
+        isAnonymous: Boolean,
+        title: { type: String, required: true },
+        description: { type: String, required: true },
+        pictures: [{
+            src: String,
+            alt: String
+        }],
+        keywords: Array,
+        // should be an array of strings
+        votes: { type: Number, default: 0 },
+        // counter
     },
     {
         comments: [{
