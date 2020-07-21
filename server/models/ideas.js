@@ -4,9 +4,9 @@ const ideaSchema = new mongoose.Schema(
     {
         username: {
             ref: "Username",
-            type: mongoose.Schema.Types.ObjectId
+            type: mongoose.Schema.Types.ObjectId,
+            default: null
         },
-        isAnonymous: Boolean,
         title: { type: String, required: true },
         description: { type: String, required: true },
         pictures: [{

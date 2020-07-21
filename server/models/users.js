@@ -1,8 +1,9 @@
 const mongoose = require('../db/connection')
 
+
 const userSchema = new mongoose.Schema(
     {
-        username: String,
+        username: {type: String, required: true},
         password: String,
         email: String,
         canContact: { type: Boolean, default: true },
@@ -10,7 +11,7 @@ const userSchema = new mongoose.Schema(
         ideas: [{
             ref: "Idea",
             type: mongoose.Schema.Types.ObjectId
-        }],
+        }] || null,
         // saved: [{
         //     ref: "Idea",
         //     type: mongoose.Schema.Types.ObjectId,

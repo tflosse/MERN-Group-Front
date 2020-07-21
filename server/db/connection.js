@@ -12,7 +12,7 @@ mongoose
     .connect(MONGODB_URI, { 
         useUnifiedTopology: true, 
         useNewUrlParser: true, 
-        useeFindAndModify: false  })
+        useFindAndModify: false  })
     .then(() => {
         console.log('Successfully connected to MongoDB.')
     })

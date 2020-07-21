@@ -41,6 +41,7 @@ const seedData = [
         votes: 234,
         comments: [
           {
+            username: "christinaj",
             isAnonymous: true,
             commentBody:
               "I LOVE THIS! Joanna, please make it happen, that would make such a huge difference for me too, especially with how shy my Doodle is, she ends up hiding the whole time and park time is more stressful that playful.",
@@ -75,6 +76,7 @@ const seedData = [
       src: "https://randomuser.me/api/portraits/men/27.jpg",
       alt: "ryan-horton",
     },
+    ideas:[]
   },
   {
     username: "bcurtis",
@@ -103,6 +105,7 @@ const seedData = [
       src: "https://randomuser.me/api/portraits/women/21.jpg",
       alt: "avery-nelson",
     },
+    ideas: []
   },
   {
     username: "herb-gardner",
@@ -112,6 +115,7 @@ const seedData = [
       src: "https://randomuser.me/api/portraits/men/55.jpg",
       alt: "herbert-gardner",
     },
+    ideas: []
   },
   {
     username: "brandcastillo",
@@ -184,6 +188,7 @@ const seedData = [
         votes: 137,
         comments: [
           {
+            username: "ryan-horton",
             isAnonymous: true,
             commentBody:
               "Getting insurance to get onboard with this will be difficult, so many issues down the road in case on an accident...",
