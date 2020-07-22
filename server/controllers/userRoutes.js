@@ -34,6 +34,15 @@ router.get('/find/:username', (req, res) => {
 });
 // verified at http://localhost:4000/users/find/bcurtis
 
+// GET user by email
+// router.get('/find/:email', (req, res) => {
+//     User.find({email: req.params.email}, 
+//         (err, user) => {
+//         if (err) console.log(err)
+//         else res.send(user)
+//     })
+// });
+
 // GET user by ID
 router.get('/:id', (req, res) => {
     User.findById(req.params.id, 
@@ -91,7 +100,6 @@ router.put('/posts/:userId/:id', (req, res) => {
 });
 // Idea ID now shows in users' idea array
 
-// BELOW does not work - YET
 // GET post and user, and remove post from user's ideas
 router.put('/post/remove/:userId/:id', async (req, res) => {
     await Idea.findById(req.params.id, (err, idea) => {

@@ -72,7 +72,7 @@ function NavBar() {
                   data-toggle="collapse"
                   data-target=".navbar-collapse.show"
                 >
-                  POST NEW IDEA
+                  NEW IDEA
                 </div>
               </Link>
             </a>
