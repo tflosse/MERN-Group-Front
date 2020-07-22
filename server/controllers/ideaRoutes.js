@@ -99,6 +99,7 @@ router.post('/', (req, res) => {
         username: req.body.username,
         title: req.body.title,
         description: req.body.description,
+        imgSrc: req.body.imgSrc,
         keywords: req.body.keywords,
     },
     (err, idea) => {

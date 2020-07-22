@@ -25,47 +25,33 @@ const userSchema = new mongoose.Schema(
 For both `ideas` and `comments`, include an option for users to post ideas and comment **anonymously** by adding an `anonymous` option (collapse the username input field on the front-end using `useState` and `onClick`):
 
 ```js
+const commentSchema = new mongoose.Schema(
+    {
+        username: String,
+        // username: {
+        //     ref: "User",
+        //     type: mongoose.Schema.Types.ObjectId
+        // },
+        isAnonymous: Boolean,
+        commentBody: { type: String, required: true },
+    },
+    {timestamps: true}
+);
+
 const ideaSchema = new mongoose.Schema(
     {
-        username: {
-            ref: "Username",
-            type: mongoose.Schema.Types.ObjectId
-        },
-        isAnonymous: Boolean,
+        username: String,
         title: { type: String, required: true },
         description: { type: String, required: true },
-        pictures: [{
-            src: String,
-            alt: String
-        }],
+        imgSrc: String,
         keywords: Array,
         // should be an array of strings
         votes: { type: Number, default: 0 },
         // counter
-    },
-    {
-        comments: [{
-            ref: "Comment",
-            type: mongoose.Schema.Types.ObjectId
-    }]},
-    {timestamps: true}
-);
-// exported as "Idea"
-```
-
-```js
-const commentSchema = new mongoose.Schema(
-    {
-        username: {
-            ref: "Username",
-            type: mongoose.Schema.Types.ObjectId
-        },
-        isAnonymous: Boolean,
-        commentBody: { type: String, required: true }
+        comments: {type: [commentSchema], default: []}
     },
     {timestamps: true}
 );
-// exported as "Comment"
 ```
 
 ```js

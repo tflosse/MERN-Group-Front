@@ -12,10 +12,7 @@ const seedUsers = [
     //     title: "PawTracker",
     //     description:
     //       "This app uses the GPS location of a dog collar device to measure your furry friend's activity throughout the day. Depending on the settings, dog breed, and your pet's activity history, the app will alert you if the level of activity is relatively much lower than average, and if much higher than average, will send you reminder to make sure they have water and are able to rest.",
-    //     pictures: {
-    //       src: "https://i.imgur.com/Qsn5Vg5.png",
-    //       alt: "puppy-collar",
-    //     },
+    //     imgSrc: "https://i.imgur.com/Qsn5Vg5.png",
     //     keywords: ["petcare", "dog", "activity", "fitness", "exercise"],
     //     votes: 189,
     //     comments: [
@@ -91,7 +88,7 @@ const seedUsers = [
     //     title: "TuneSync",
     //     description:
     //       "This app syncs up to your music streaming app and shares your current song with a friend, allowing them to listen to the same song from the app.",
-    //     pictures: { src: "https://i.imgur.com/8Qz0Qg0.png", alt: "music-app" },
+    //     imgSrc: "https://i.imgur.com/8Qz0Qg0.png",
     //     keywords: ["music", "sharing", "sync", "stream"],
     //     votes: 432,
     //     comments: []
@@ -184,7 +181,7 @@ const seedUsers = [
     //     title: "Rent your Truck",
     //     description:
     //       "So I recently moved and something dawned on me: I don't know a single person who drives a truck. Rental places were all rented out because it was the 30th of the month and, I found myself renting a huge flatbed when I only had a few items left to move, which turned the whole operation into something much more complicated than it should have been. How great would it be if you could rent a truck from someone near you and facilitate it with a company that can handle security and insurance stuff for you? Just a thought.",
-    //     pictures: { src: "https://i.imgur.com/buWkUMF.png", alt: "toy-truck" },
+    //     imgSrc: "https://i.imgur.com/buWkUMF.png",
     //     keywords: ["moving", "trucks", "rental"],
     //     votes: 137,
     //     comments: [

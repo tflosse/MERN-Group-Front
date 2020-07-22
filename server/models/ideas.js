@@ -20,10 +20,7 @@ const ideaSchema = new mongoose.Schema(
         username: String,
         title: { type: String, required: true },
         description: { type: String, required: true },
-        pictures: [{
-            src: String,
-            alt: String
-        }],
+        imgSrc: String,
         keywords: Array,
         // should be an array of strings
         votes: { type: Number, default: 0 },
