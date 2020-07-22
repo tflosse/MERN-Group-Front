@@ -1,36 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Dashboard.css'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { usersApi, ideasApi } from '../../apiConfig.js'
+import axios from 'axios'
+
 
 function Dashboard () {
     const checkmark = '✔';
-    // let ideaSchema = {
-    //     createive_idea: {
-    //         title: { type: String, required: true },
-    //         description: { type: String, required: true },
-    //         pictures: [{
-    //             src: String,
-    //             alt: String
-    //         }],
-    //         keywords: [Strings],
-    //         votes: { type: Number, default: 0 }
-    //         // counter
-    //     },
-    //     personal: {
-    //         isAnonymous: Boolean,
-    //         username: {
-    //             ref: "Username",
-    //             type: mongoose.Schema.Types.ObjectId
-    //         }
-    //         canContact: { type: Boolean, default: true }
-    //     },
-    //     otherUserResponse {
-    //         comments: [{
-    //             ref: "Comment",
-    //             type: mongoose.Schema.Types.ObjectId
-    //     }]},
-    //     {timestamps: true}
-    // }
+    console.log(ideasApi)        
+      const [ideas, setIdeas] = useState([]);
+      const [isDeleted,setIsDeleted] = useState(false)
+      useEffect(() => {
+        const makeAPICall = async () => {
+          try {
+            const response = await axios(`${ideasApi}/all`);
+            console.log("Ideas - useEffect - response", response);
+            setIdeas(response.data);
+          } catch (err) {
+            console.error(err);
+          }
+        };  
+        makeAPICall();
+      }, [])
+
+    //   const ideaArray= ideas.map((idea)=> (
+
+    //   ))
     let idea={
         creative_idea: {
             title: "coffee when you are done with hygiene",

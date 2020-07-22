@@ -11,13 +11,13 @@ const ideasApis = {
   development: "http://localhost:4000/ideas",
 };
 
-if (window.location.hostname === "localhost") {
-  usersApi = usersApis.development;
-  ideasApi = ideasApis.development;
-} else {
+// if (window.location.hostname === "localhost") {
+//   usersApi = usersApis.development;
+//   ideasApi = ideasApis.development;
+// } else {
   usersApi = usersApis.production;
   ideasApi = ideasApis.production;
-}
+// }
 //can't do default exports when you need to export more than one
 //changed to named exports
 

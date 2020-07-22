@@ -1,5 +1,5 @@
 import React from 'react';
-import autosize from 'autosize';
+// import autosize from 'autosize';
 import { Link } from 'react-router-dom';
 import './IdeaForm.css'
 const IdeaForm = ({ handleSubmit, handleChange, cancelPath }) => {
