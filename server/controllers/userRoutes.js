@@ -93,25 +93,21 @@ router.put('/posts/:userId/:id', (req, res) => {
 
 // BELOW does not work - YET
 // GET post and user, and remove post from user's ideas
-// router.put('/posts/remove/:userId/:id', async (req, res) => {
-//     await Idea.findById(req.params.id, (err, idea) => {
-//         if (err) console.log(err)
-//         else {
-//             User.findByIdAndUpdate(
-//                 req.params.userId,
-//                 { $pull: {ideas: idea.id}},
-//                 (err, user) => {
-//                     if (err) console.log(err)
-//                     else res.send(user)
-//                 }
-//             )
-//         }
-//     })
-//     Idea.findByIdAndDelete(req.params.id, (err, idea) => {
-//         if (err) console.log(err)
-//         else console.log("Could not find and delete.")
-//     })
-// });  
+router.put('/post/remove/:userId/:id', async (req, res) => {
+    await Idea.findById(req.params.id, (err, idea) => {
+        if (err) console.log(err)
+        else {
+            User.findOneAndUpdate(
+                req.params.userId,
+                { $pull: {ideas: req.params.id}},
+                (err, user) => {
+                    if (err) console.log(err)
+                    else res.send(user)
+                }
+            )
+        }
+    })
+    });  
 
 // DELETE users
 router.delete('/delete/:id', (req, res) => {
