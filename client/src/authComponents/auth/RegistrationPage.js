@@ -47,8 +47,8 @@ const Login = (props) => {
 
   return (
       <>
-    <h2>Log In</h2>
-      <LoginForm
+    <h2>Sign Up</h2>
+      <RegistrationForm
         handleUsernameChange={handleUsernameChange}
         handlePasswordChange={handlePasswordChange}
         handleEmailChange={handleEmailChange}
