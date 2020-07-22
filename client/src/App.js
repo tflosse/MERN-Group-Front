@@ -1,5 +1,13 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import axios from "axios";
+import { usersApi, ideasApi } from "./apiConfig.js";
 // import { SecureRoute, ImplicitCallback } from '@okta/okta-react';
 
 // Auth Components
@@ -18,14 +26,47 @@ import IdeaCreate from './appComponents/routes/IdeaCreate';
 
 import './App.css';
 
-export default class App extends Component {
-  render() {
+const App = props => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("handleSubmit");
+    
+    axios({
+      url: `${usersApi}/login`,
+      method: "POST",
+      data: {
+        username: `${username}`,
+        password: `${password}`,
+        email: `${email}`,
+      },
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch(console.error);
+  };
+
+  
     return (
       <div className="App">
         <Switch> 
-            <Layout>
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/login" component={LoginPage} />
+            <Layout username={username}>
+                <Route path="/" exact render={routerProps=> <Dashboard username={username} />} />
+                <Route path="/login" render={routerProps=> <LoginPage username={username} password={password} email={email} handleEmailChange={handleEmailChange} handlePasswordChange={handlePasswordChange} handleSubmit={handleSubmit} handleUsernameChange={handleUsernameChange}/>}  />
                 <Route path="/registration" component={RegistrationPage} />
                 <Route exact path='/ideas/:ideatitle' render={routerProps => <Idea {...routerProps}/>}/>
                 <Route exact path='/ideacreate' render={routerProps => <IdeaCreate {...routerProps}/>}/>
@@ -35,5 +76,7 @@ export default class App extends Component {
         {/* <Navigation /> */}
       </div>
     );
-  }
+  
 }
+
+export default App

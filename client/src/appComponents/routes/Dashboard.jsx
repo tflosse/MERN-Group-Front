@@ -5,7 +5,7 @@ import { usersApi, ideasApi } from '../../apiConfig.js'
 import axios from 'axios'
 
 
-function Dashboard () {
+function Dashboard (props) {
     const checkmark = '✔';
     console.log(ideasApi)        
       const [ideas, setIdeas] = useState([]);
@@ -80,6 +80,7 @@ function Dashboard () {
     //     )
     //     })
     // } else userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
+    const text =  props.username != "" ?   `What Brilliant Ideas did the world have while you were gone, ${props.username}?` : ''
     return (
         <>
         <div className="FeedUltimateContainer">
@@ -87,7 +88,7 @@ function Dashboard () {
                 <div className="FeedHeader">
                     <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
                 </div>
-                <h4 className="Brilliant"> What Brilliant Ideas did the world have while you were gone?</h4>
+                <h4 className="Brilliant"> {text}</h4>
             </div>
             <div className="MainFeed">
                 {ideaArray}
