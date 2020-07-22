@@ -37,60 +37,24 @@ function Idea (props) {
     }
 
 
-    let idea={
-        creative_idea: {
-            title: "coffee when you are done with hygiene",
-            description: 'a cup of coffee freshly brewed as you wake up and conduct personal hygiene and ready on the table when you are done',
-            picture:{
-                src:'',
-                alt:''
-            },
-            keywords: ['coffee', 'ready when you are','fresh']
-        },
-        personal:{
-            isAnonymous: false,
-            username:{
-                name: 'Jim Chen'
-            },
-            canContact: true
-        },
-        otherUserResponse:{
-            comments:[
-                {
-                    comment:'This idea needs development. What exactly are you proposing?',
-                    user: 'Nick', 
-                    timestamp: "3 Hours ago"
-                },
-                {
-                    comment: 'I like this idea',
-                    user: 'Tam', 
-                    timestamp: "1 hours ago"
-                },
-                {
-                    comment: 'That is probably going to involve a timer, a robot, and a button you press to start the robot. You will also need to calculate a working average hygiene prep time which may vary per customer.',
-                    user: 'Andrew', 
-                    timestamp: "15 mins ago"
-                }
-            ]
-        }
-    }
-    let authorName= (idea.personal.isAnonymous ? 'Anonymous':idea.personal.username.name)
-    
     let userComments 
-    if(idea.otherUserResponse.comments[0]){
-        userComments=idea.otherUserResponse.comments.map((comm)=>{
+    if(!ideas.comments) userComments=<div><p>Loading...</p></div>
+    else{
+    if(!ideas.comments[0]) userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
+    else{
+        userComments=ideas.comments.map((comm)=>{
         return (
             <div className="CommentContainer">
                 <div className="Comment-user-and-timestamp">
-            <p className='dashboard-comment-name'>{comm.user}</p>
+            <p className='dashboard-comment-name'>{comm.username}</p>
             <p className='dashboard-comment-timestamp'>{comm.timestamp}</p>
             </div>
-            <p className='dashboard-comment-body'>{comm.comment}</p>
+            <p className='dashboard-comment-body'>{comm.commentBody}</p>
             </div>
         )
         })
-    } else userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
-    
+    } 
+}
     return (
         <>
         <div className="FeedUltimateContainer">
@@ -122,6 +86,7 @@ function Idea (props) {
                     </div>
                     <div className='dashboard-desc'>
                         <p>{ideas.description}</p>
+                        {/* <img src={ideas.imgSrc}/> */}
                         {/* <p>keywords:</p> */}
                         <div className='dashboard-keytags'>{keytags(ideas.keywords)}</div>
                     </div>
@@ -135,9 +100,8 @@ function Idea (props) {
                 </div>
                 <div className="AddComment">
                     <form className="CommentForm">
-                        <p> Anon {checkmark} </p>
+                        {/* <input placeholder="Leave a Comment"/>  */}
                         <input placeholder="Leave a Comment"/> 
-                        <input placeholder="Add Hashtags"/>
                         <button type="submit">Submit</button>
                     </form>
                 </div>

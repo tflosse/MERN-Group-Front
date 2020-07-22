@@ -26,7 +26,7 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav navbar-light">
-            <a className="nav-item nav-link active">
+            {/* <a className="nav-item nav-link active">
               {" "}
               <span className="sr-only">(current)</span>
               <Link to="/" className="navLink">
@@ -39,7 +39,7 @@ function NavBar() {
                   DASHBOARD{" "}
                 </div>
               </Link>
-            </a>
+            </a> */}
 
             <a className="nav-item nav-link">
               <Link to="/" className="navLink">
@@ -53,7 +53,7 @@ function NavBar() {
               </Link>
             </a>
 
-            <a className="nav-item nav-link">
+            {/* <a className="nav-item nav-link">
               <Link to="/" className="navLink">
                 <div
                   className="togglewrapperrr"
@@ -63,7 +63,7 @@ function NavBar() {
                   INBOX
                 </div>
               </Link>
-            </a>
+            </a> */}
 
             <a className="nav-item nav-link">
               <Link to="/ideacreate" className="navLink">
