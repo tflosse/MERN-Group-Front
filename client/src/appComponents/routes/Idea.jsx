@@ -39,13 +39,7 @@ function Idea (props) {
           }
     }
 
-    // const handleDeleteClick = async () => {
-    //     const response = await axios (
-    //         {
-    //             url: 
-    //         }
-    //     )
-    // }
+
     let userComments 
     if(!ideas.comments) userComments=<div><p>Loading...</p></div>
     else{
@@ -61,7 +55,6 @@ function Idea (props) {
             comm={comm}
             ideaId={ideaId}
             />
-            {/* <p keyId={comm._id} onClick={handleDeleteClick}>X</p> */}
             <p className='dashboard-comment-timestamp'>{comm.timestamp}</p>
             </div>
             <p className='dashboard-comment-body'>{comm.commentBody}</p>
@@ -151,11 +144,6 @@ function Idea (props) {
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
                     />
-                    {/* <form className="CommentForm">
-                        <input placeholder="Username to display"/> 
-                        <input placeholder="Leave a Comment"/> 
-                        <button type="submit">Submit</button>
-                    </form> */}
                 </div>
             </div>
         </div>
