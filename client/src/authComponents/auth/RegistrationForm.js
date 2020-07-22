@@ -16,9 +16,9 @@ const LoginForm = (props) => {
           name="username"
           onChange={props.handleUsernameChange}
         />
-        <p>Name</p>
-        {/* <br /> */}
-        <label>Password </label>
+        
+        <br />
+        <label>Password: </label>
         <input
           className="Title-input"
           placeholder="Password"
@@ -27,7 +27,7 @@ const LoginForm = (props) => {
           onChange={props.handlePasswordChange}
         />
         <br />
-        <label>Email</label>
+        <label>Email:</label>
         <textarea
           autosize
           className="Description-input"

@@ -16,9 +16,9 @@ const LoginForm = (props) => {
           name="username"
           onChange={props.handleUsernameChange}
         />
-        <p>Name</p>
-        {/* <br /> */}
-        <label>Password </label>
+        
+        <br />
+        <label>Password: </label>
         <input
           className="Title-input"
           placeholder="Password"
