@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <header>
       <nav className="navbar fixed-top navbar-expand-sm navbar-light">
-        <a class="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           <img
             className="Logo"
             src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595024102/Untitled_2_tcxox8.jpg"
