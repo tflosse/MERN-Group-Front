@@ -4,6 +4,7 @@ const cors = require('cors')
 const logger = require('morgan');
 
 const usersController = require('./controllers/userRoutes');
+const ideasController = require('./controllers/ideaRoutes');
 
 const PORT = process.env.PORT || 4000
 
@@ -13,7 +14,8 @@ app.use(express.json());
 app.use(logger('dev'));
 
 // app.use controllers here
-app.use('/accounts', usersController);
+app.use('/users', usersController);
+app.use('/ideas', ideasController);
 
 app.set("port", process.env.PORT || 4000);
 

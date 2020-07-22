@@ -1,5 +1,5 @@
 const mongoose = require('../db/connection')
-
+const Idea = require('./ideas');
 
 const userSchema = new mongoose.Schema(
     {
@@ -8,10 +8,9 @@ const userSchema = new mongoose.Schema(
         email: String,
         canContact: { type: Boolean, default: true },
         photo: { src: String, alt: String},
-        ideas: [{
-            ref: "Idea",
+        ideas: [{ref: "Idea",
             type: mongoose.Schema.Types.ObjectId
-        }] || null,
+        }]
         // saved: [{
         //     ref: "Idea",
         //     type: mongoose.Schema.Types.ObjectId,

@@ -1,14 +1,6 @@
-const seedData = [
-  {
-    username: "joanna90403",
-    password: "unprotectedpw",
-    email: "jo.wang@fakemail.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/women/90.jpg",
-      alt: "joanna-wang",
-    },
-    ideas: [
-      {
+const seedIdeas = [
+    {
+        username: "joanna90403",
         title: "PawTracker",
         description:
           "This app uses the GPS location of a dog collar device to measure your furry friend's activity throughout the day. Depending on the settings, dog breed, and your pet's activity history, the app will alert you if the level of activity is relatively much lower than average, and if much higher than average, will send you reminder to make sure they have water and are able to rest.",
@@ -34,6 +26,7 @@ const seedData = [
         ],
       },
       {
+        username: "joanna90403",
         title: "Doggie Date App",
         description:
           "Fill out a profile for your pets and get matched with other dogs based on their character for more fun and relaxed playdates. It always makes me so nervous taking Scooper to the park, because he is very energetic and ready to make friends but it is not well-received by all other dogs, I get scared that he might get bit for being too friendly.",
@@ -66,28 +59,8 @@ const seedData = [
           },
         ],
       },
-    ],
-  },
-  {
-    username: "ryan-horton",
-    password: "password",
-    email: "ryan.horton@example.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/men/27.jpg",
-      alt: "ryan-horton",
-    },
-    ideas:[]
-  },
-  {
-    username: "bcurtis",
-    password: "bcurtpasswd",
-    email: "bcurt@notanemail.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/men/73.jpg",
-      alt: "brandon-curtis",
-    },
-    ideas: [
       {
+        username: "bcurtis",
         title: "TuneSync",
         description:
           "This app syncs up to your music streaming app and shares your current song with a friend, allowing them to listen to the same song from the app.",
@@ -95,38 +68,8 @@ const seedData = [
         keywords: ["music", "sharing", "sync", "stream"],
         votes: 432,
       },
-    ],
-  },
-  {
-    username: "averyn",
-    password: "averyspw",
-    email: "averynelson92@example.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/women/21.jpg",
-      alt: "avery-nelson",
-    },
-    ideas: []
-  },
-  {
-    username: "herb-gardner",
-    password: "thispassword",
-    email: "herbert.gardner@fakemail.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/men/55.jpg",
-      alt: "herbert-gardner",
-    },
-    ideas: []
-  },
-  {
-    username: "brandcastillo",
-    password: "brandiepasswd",
-    email: "brandiecastillo@example.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/women/8.jpg",
-      alt: "brandie-castillo",
-    },
-    ideas: [
       {
+        username: "brandcastillo",
         title: "Book Rec",
         description:
           "Rate books you've read and loved to get more recommendations. It could be based on themes or keywords, similar writing styles. Maybe users could take a short survey when they finish a book, and with that data even start reading or book clubs?",
@@ -153,18 +96,8 @@ const seedData = [
           },
         ],
       },
-    ],
-  },
-  {
-    username: "clay-burke",
-    password: "notprotected",
-    email: "cburke@fakemail.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/men/86.jpg",
-      alt: "clayotn-burke",
-    },
-    ideas: [
       {
+        username: "clay-burke",
         title: "Social Language Learning",
         description:
           "Get matched up with native speakers who are trying to learn your native language too so you can freely exchange and practice, and help each other. My friend met a Brazilian traveler years back, they've kept in touch and call each other every other week, he now understands conversational Brazilian Portuguese, it's super neat!",
@@ -180,6 +113,7 @@ const seedData = [
         ],
       },
       {
+        username: "clay-burke",
         title: "Rent your Truck",
         description:
           "So I recently moved and something dawned on me: I don't know a single person who drives a truck. Rental places were all rented out because it was the 30th of the month and, I found myself renting a huge flatbed when I only had a few items left to move, which turned the whole operation into something much more complicated than it should have been. How great would it be if you could rent a truck from someone near you and facilitate it with a company that can handle security and insurance stuff for you? Just a thought.",
@@ -201,18 +135,8 @@ const seedData = [
           },
         ],
       },
-    ],
-  },
-  {
-    username: "christinaj",
-    password: "cjensenpassword",
-    email: "tinajensen@example.com",
-    photo: {
-      src: "https://randomuser.me/api/portraits/women/4.jpg",
-      alt: "christina-jensen",
-    },
-    ideas: [
       {
+        username: "christinaj",
         title: "BugID",
         description:
           "How about an application that would help people identify the bugs in their homes? With two or three pictures, the app would let you know if the bug could bite or be harmful. That would be useful.",
@@ -226,9 +150,7 @@ const seedData = [
               "You might need an extensive database of pictures to compare it to, but it would be useful, I always worry that I might get bit by spiders, when my roommate says they're harmless.",
           },
         ],
-      },
-    ],
-  },
+      }
 ];
 
-module.exports = seedData;
+module.exports = seedIdeas;
