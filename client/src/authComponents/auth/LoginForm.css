@@ -1,0 +1,63 @@
+.NewIdeaForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-family: "Bebas Neue";
+    margin-bottom: 10vh;
+    padding: 20px;
+    border: 1.5px solid #1d1c17;
+    border-radius: 5px;
+  }
+  .Idea-Create-Div-box {
+      display: flex;
+      flex-direction: column;
+    }
+  label {
+      text-align: left;
+      margin-left: 12px;
+  }
+  .Description-input {
+    border: solid 2px #41bab2;
+    border-radius: 2px;
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    max-height: none;
+    resize: none;
+    font-size: 14px;
+  }
+  .Title-input {
+    border: solid 2px #41bab2;
+    border-radius: 2px;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+  }
+  /* .Description-input:active, .Title-input:active {
+      border: solid 2.5px rgb(243,168,40);
+  } */
+  .Name-guidelines {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: right;
+    padding: 3px 10px 0 10px;
+  }
+  .Idea-create-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+  .submit,
+  .cancel {
+    background-color: #41bab2;
+    width: 80px;
+    border: none;
+    border-radius: 3px;
+    padding-top: 2px;
+    -webkit-transition: all 300ms ease;
+  }
+  .submit:hover, .cancel:hover {
+      background-color:rgb(243,168,40);
+      color: whitesmoke;
+      transition: all 200ms ease;
+  }
