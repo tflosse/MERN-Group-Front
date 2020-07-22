@@ -22,13 +22,12 @@ function Dashboard () {
         };  
         makeAPICall();
       }, [])
-      let keytags
-      const keytagsArray= ideas.map((idea)=>(
-          keytags=idea.keywords.map((keys)=>(
-              <p>{keys}</p>
-          ))
-      ))
-
+    function keytags(array){
+        const keytagArr=array.map((item)=>(
+            <p className='dashboard-ind-key'>#{item}</p>
+        ))
+        return keytagArr
+    }
 
       const ideaArray= ideas.map((idea)=> (
         <div className='dashboard-creative-idea'>
@@ -56,7 +55,7 @@ function Dashboard () {
             <div className='dashboard-desc'>
                 <p>{idea.description}</p>
                 {/* <p>keywords:</p> */}
-                <div className='dashboard-keytags'>{keytags}</div>
+                <div className='dashboard-keytags'>{keytags(idea.keywords)}</div>
             </div>
         </div>
        ));
