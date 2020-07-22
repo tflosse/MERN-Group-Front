@@ -2,12 +2,12 @@ let usersApi;
 let ideasApi;
 
 const usersApis = {
-  production: "https://pure-reaches-36148.herokuapp.com/users",
+  production: "https://ancient-beyond-04234.herokuapp.com/users",
   development: "http://localhost:4000/users",
 };
 
 const ideasApis = {
-  production: "https://pure-reaches-36148.herokuapp.com/ideas",
+  production: "https://ancient-beyond-04234.herokuapp.com/ideas",
   development: "http://localhost:4000/ideas",
 };
 
