@@ -60,26 +60,7 @@ function Dashboard () {
         </div>
        ));
        
-    // let keytags=idea.creative_idea.keywords.map((tags)=>{
-    //     return (
-    //         <p className='dashboard-ind-key'>#{tags}</p>
-    //     )
-    // })
-    
-    // let userComments 
-    // if(idea.otherUserResponse.comments[0]){
-    //     userComments=idea.otherUserResponse.comments.map((comm)=>{
-    //     return (
-    //         <div className="CommentContainer">
-    //             <div className="Comment-user-and-timestamp">
-    //         <p className='dashboard-comment-name'>{comm.user}</p>
-    //         <p className='dashboard-comment-timestamp'>{comm.timestamp}</p>
-    //         </div>
-    //         <p className='dashboard-comment-body'>{comm.comment}</p>
-    //         </div>
-    //     )
-    //     })
-    // } else userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
+
     return (
         <>
         <div className="FeedUltimateContainer">
