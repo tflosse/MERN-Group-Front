@@ -37,7 +37,18 @@ li {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;  
   }
-
+.material-icons {
+    font-size: 1.6rem;
+    height: 1em;
+}
+.nav-username {
+    text-transform: uppercase;
+}
+.account-info {
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+}
 .Logo {
     max-width: 80px; 
 }

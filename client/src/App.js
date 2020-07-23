@@ -110,7 +110,7 @@ const App = (props) => {
               />
             )}
           />
-        <Layout username={username}>
+        <Layout username={name}>
           <Route
             path="/home"
             exact

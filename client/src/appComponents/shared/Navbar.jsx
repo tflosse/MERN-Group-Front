@@ -1,16 +1,16 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-const  NavBar = (props)=> {
-//   const [temp, setTemp] = useState('')
-//   const login = () => {
-//     if (props.username != ''){
-//       setTemp(`WELCOME, ${props.username.toUpperCase()}`)
-//   }else{
-//     setTemp('LOG IN')
-//   }
-// }
+const NavBar = (props) => {
+  //   const [temp, setTemp] = useState('')
+  //   const login = () => {
+  //     if (props.username != ''){
+  //       setTemp(`WELCOME, ${props.username.toUpperCase()}`)
+  //   }else{
+  //     setTemp('LOG IN')
+  //   }
+  // }
 
   return (
     <header>
@@ -89,26 +89,27 @@ const  NavBar = (props)=> {
                 <li><NavLink to='/' className='navLink2'> About </NavLink></li>
                 <li><NavLink to='/' className='navLink2'> Settings </NavLink></li>
             </ul> */}
-              <a className="nav-item nav-link about">
-                <Link to="/about" className="navLink">
-                  <div
-                    className="togglewrapperrr"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse.show"
-                  >
-                    ABOUT
-                  </div>
-                </Link>
-              </a>
-
-              <a className="nav-item nav-link login">
-              <Link to="/login" className="navLink">
+            <a className="nav-item nav-link about">
+              <Link to="/about" className="navLink">
                 <div
                   className="togglewrapperrr"
                   data-toggle="collapse"
                   data-target=".navbar-collapse.show"
                 >
-                  LOG IN
+                  ABOUT
+                </div>
+              </Link>
+            </a>
+
+            <a className="nav-item nav-link login">
+              <Link to="/" className="navLink">
+                <div
+                  className="togglewrapperrr account-info"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
+                  <span className="material-icons">account_circle</span>{" "}
+                  <span className="nav-username" > {props.username}</span>
                 </div>
               </Link>
             </a>
@@ -117,6 +118,6 @@ const  NavBar = (props)=> {
       </nav>
     </header>
   );
-          }
+};
 
 export default NavBar;
