@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import './Idea.css'; 
 import { usersApi, ideasApi } from '../../apiConfig.js'
+import CommentForm from './CommentForm'
+import {Redirect} from 'react-router-dom' 
+import DeleteComment from './DeleteComment'
 
 function Idea (props) {
     const checkmark = '✔';
@@ -43,10 +46,15 @@ function Idea (props) {
     if(!ideas.comments[0]) userComments= <div><p>There are no comments for this idea, be the first to comment!</p></div>
     else{
         userComments=ideas.comments.map((comm)=>{
+            console.log(comm)
         return (
             <div className="CommentContainer">
                 <div className="Comment-user-and-timestamp">
             <p className='dashboard-comment-name'>{comm.username}</p>
+            <DeleteComment 
+            comm={comm}
+            ideaId={ideaId}
+            />
             <p className='dashboard-comment-timestamp'>{comm.timestamp}</p>
             </div>
             <p className='dashboard-comment-body'>{comm.commentBody}</p>
@@ -55,6 +63,38 @@ function Idea (props) {
         })
     } 
 }
+    const [comment, setComment] = useState({username: '', commentBody: ''})
+    const [isUpdated,setIsUpdated] = useState(false)
+    useEffect( () => {
+        const makeAPICall = async () => {
+        try {
+            const response = await axios(`${ideasApi}/ideas/${ideaId}`)
+            setComment({comment: response.data.comments})
+        } catch (err) {
+            console.error(err)
+        }
+    }
+    makeAPICall()
+    }, [])
+    const handleChange = event => {
+        setComment({
+            ...comment,
+            [event.target.name]: event.target.value
+        })
+    }
+    const handleSubmit = event => {
+        event.preventDefault()
+        axios({
+            url: `${ideasApi}/comment/${ideaId}`,
+            method: 'PUT',
+            data: comment
+        })
+            .then(() => setIsUpdated(true))
+            .catch(console.error)
+    }
+        if (isUpdated) {
+            window.location.reload()
+        }
     return (
         <>
         <div className="FeedUltimateContainer">
@@ -99,11 +139,11 @@ function Idea (props) {
                     {userComments}
                 </div>
                 <div className="AddComment">
-                    <form className="CommentForm">
-                        {/* <input placeholder="Leave a Comment"/>  */}
-                        <input placeholder="Leave a Comment"/> 
-                        <button type="submit">Submit</button>
-                    </form>
+                    <CommentForm 
+                        comment={comment}
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                    />
                 </div>
             </div>
         </div>

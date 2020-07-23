@@ -43,6 +43,17 @@ function Dashboard(props) {
             </div>
             <div className="PostCountBox">
               <p>{idea.votes}</p>
+        </div>
+       ));
+       
+    return (
+        <>
+        <div className="FeedUltimateContainer">
+            <div className="FeedHeaderContainer">
+                <div className="FeedHeader">
+                    <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
+                </div>
+                <h4 className="Brilliant"> What Brilliant Ideas did the world have while you were gone?</h4>
             </div>
             <div className="PostDownBox">
               <i className="material-icons">keyboard_arrow_down</i>
