@@ -28,31 +28,33 @@ const DeletePost = (props) => {
     const ideaIds = props.ideaId;
     const url = `${ideasApi}/${ideaIds}`;
     await destroy(url);
-    window.location = "/home"
+    window.location = "/home";
   };
 
-  
-  
-  if(props.myUsername==props.postUsername){
-    return(
-    <div className="App">
-      <Popup trigger={<button className="btn btn-warning">Delete Post</button>} position="top left">
-        {(close) => (
-          <div>
-            <span>Are you sure you want to delete?</span>
-            <button className="btn btn-warning"onClick={handleClick}>Yes</button>
-            <a className="close" onClick={close}>
-              &times;
-            </a>
-          </div>
-        )}
-      </Popup>
-    </div>
-    )}
-    else{
-      return(<></>)
-    }
-        
+  if (props.myUsername == props.postUsername) {
+    return (
+      <div className="App">
+        <Popup
+          trigger={<button className="btn btn-warning">Delete Post</button>}
+          position="top left"
+        >
+          {(close) => (
+            <div>
+              <span>Are you sure you want to delete?</span>
+              <button className="btn btn-warning" onClick={handleClick}>
+                Yes
+              </button>
+              <a className="close" onClick={close}>
+                &times;
+              </a>
+            </div>
+          )}
+        </Popup>
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default DeletePost;
