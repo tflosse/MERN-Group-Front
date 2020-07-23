@@ -100,7 +100,7 @@ const NavBar = (props) => {
                 </div>
               </Link>
             </a>
-
+            <div className="ProfileContainer">
             <a className="nav-item nav-link login">
               <Link to="/" className="navLink">
                 <div
@@ -113,6 +113,7 @@ const NavBar = (props) => {
                 </div>
               </Link>
             </a>
+            </div>
           </div>
         </div>
       </nav>

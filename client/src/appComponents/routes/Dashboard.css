@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+.FeedUltimateContainer {
+    max-width: 90vw; 
+}
 .dashboard-creative-idea {
     margin-top:70px; 
     border: 1px solid black;
@@ -90,6 +93,10 @@ justify-items: center;
 }
 .Mainfeed {
     margin-bottom: 200px !important; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-content: center; 
 }
 .LightbulbIcon {
     height: 28px; 
@@ -202,7 +209,7 @@ justify-items: center;
     Max-width: 728px; 
     display: flex; 
     flex-direction: column; 
-    align-items: center; 
-    justify-items: center; 
+    align-content: center; 
+    justify-content: center; 
     }
 }
