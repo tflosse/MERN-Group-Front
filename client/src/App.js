@@ -125,12 +125,12 @@ const App = (props) => {
           <Route
             exact
             path="/ideas/:ideatitle"
-            render={(routerProps) => <Idea {...routerProps} />}
+            render={(routerProps) => <Idea {...routerProps} username={name}/>}
           />
           <Route
             exact
             path="/ideacreate"
-            render={(routerProps) => <IdeaCreate username={username} />}
+            render={(routerProps) => <IdeaCreate {...routerProps} username={name} />}
           />
           {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
         </Layout>

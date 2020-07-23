@@ -7,7 +7,7 @@ import "./IdeaCreate.css";
 
 const IdeaCreate = (props) => {
   //   console.log('IdeaCreate props', props)
-  const [input, setInput] = useState({ title: "", desc: "" });
+  const [input, setInput] = useState({ username: props.username, title: "", desc: "", keywords: []});
   const [idea, setIdea] = useState(null);
   
   const handleChange = (event) => {
@@ -23,14 +23,14 @@ const IdeaCreate = (props) => {
     console.log("handleSubmit");
     console.log(input)
     axios({
-      url: `${ideasApi}/add`,
+      url: `${ideasApi}/`,
       method: "POST",
       data: input,
     })
       .then((res) => {
         console.log(res)
           setIdea({ createdItem: res.data.idea })
-          props.history.push('/songs')
+          props.history.push('/home')
         })
       .catch(console.error);
   };
@@ -45,11 +45,11 @@ const IdeaCreate = (props) => {
           />
         </div>
         <IdeaForm
-          item={input}
+          idea={input}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           username={props.username}
-          cancelPath="/"
+          cancelPath="/home"
         />
       </div>
     </>

@@ -3,7 +3,7 @@ import autosize from "autosize";
 import { Link } from "react-router-dom";
 import "./IdeaForm.css";
 
-const IdeaForm = ({ handleSubmit, handleChange, cancelPath, username }) => {
+const IdeaForm = ({ idea, handleSubmit, handleChange, cancelPath}) => {
   // console.log('IdeaForm', idea)
   return (
     <form className="NewIdeaForm" onSubmit={handleSubmit}>
@@ -11,7 +11,7 @@ const IdeaForm = ({ handleSubmit, handleChange, cancelPath, username }) => {
         <label>Username: </label>
         <input
           className="Description-input"
-          value={username}
+          value={idea.username}
           name="username"
           onChange={handleChange}
         />
@@ -24,7 +24,7 @@ const IdeaForm = ({ handleSubmit, handleChange, cancelPath, username }) => {
         <input
           className="Title-input"
           placeholder="Title"
-          // value={idea.title}
+          value={idea.title}
           name="title"
           onChange={handleChange}
         />
@@ -36,7 +36,7 @@ const IdeaForm = ({ handleSubmit, handleChange, cancelPath, username }) => {
           multiline={true}
           rows={5}
           placeholder="Idea Description"
-          // value={idea.desc}
+          value={idea.description}
           name="description"
           onChange={handleChange}
         />
@@ -45,7 +45,7 @@ const IdeaForm = ({ handleSubmit, handleChange, cancelPath, username }) => {
         <input
           className="Description-input"
           placeholder="Separated by comas"
-          // value={idea.title}
+          value={idea.keywords}
           name="keywords"
           onChange={handleChange}
         />
