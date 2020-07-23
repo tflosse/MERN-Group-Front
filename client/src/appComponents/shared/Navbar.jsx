@@ -1,8 +1,17 @@
-import React from "react";
+import React, { Component, useState } from 'react';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function NavBar() {
+const  NavBar = (props)=> {
+//   const [temp, setTemp] = useState('')
+//   const login = () => {
+//     if (props.username != ''){
+//       setTemp(`WELCOME, ${props.username.toUpperCase()}`)
+//   }else{
+//     setTemp('LOG IN')
+//   }
+// }
+
   return (
     <header>
       <nav className="navbar fixed-top navbar-expand-sm navbar-light">
@@ -87,7 +96,7 @@ function NavBar() {
                   data-toggle="collapse"
                   data-target=".navbar-collapse.show"
                 >
-                  LOGIN
+                  LOG IN
                 </div>
               </Link>
             </a>
@@ -97,6 +106,6 @@ function NavBar() {
       </nav>
     </header>
   );
-}
+          }
 
 export default NavBar;

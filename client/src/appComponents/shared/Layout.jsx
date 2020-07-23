@@ -6,7 +6,7 @@ import './Layout.css'
 const Layout = (props) => {
     return (
     <>
-        <Navbar />
+        <Navbar username={props.username}/>
         <div className="LayoutContainer">
         {props.children}
         </div>
