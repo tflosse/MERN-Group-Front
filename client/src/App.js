@@ -1,6 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState } from "react";
 import {
   BrowserRouter as Router,
+  withRouter,
   Redirect,
   Switch,
   Route,
@@ -13,27 +14,40 @@ import { usersApi, ideasApi } from "./apiConfig.js";
 // Auth Components
 // import config from './app.config';
 // import RegistrationForm from './authComponents/auth/RegistrationForm';
-import LoginPage from './authComponents/auth/LoginPage';
-import RegistrationPage from './authComponents/auth/RegistrationPage';
+import LoginPage from "./authComponents/auth/LoginPage";
+import RegistrationPage from "./authComponents/auth/RegistrationPage";
 // import ProfilePage from './authComponents/auth/ProfilePage';
 // import Navigation from './authComponents/shared/Navigation';
 
 // Ideate Components
-import Layout from './appComponents/shared/Layout';
-import About from './appComponents/shared/About';
-import Dashboard from './appComponents/routes/Dashboard';
-import Idea from './appComponents/routes/Idea';
-import IdeaCreate from './appComponents/routes/IdeaCreate';
+import Layout from "./appComponents/shared/Layout";
+import About from "./appComponents/shared/About";
+import Dashboard from "./appComponents/routes/Dashboard";
+import Idea from "./appComponents/routes/Idea";
+import IdeaCreate from "./appComponents/routes/IdeaCreate";
 
-import './App.css';
+import "./App.css";
 
-const App = props => {
+const App = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-
+  const [name, setName] = useStickyState("newUser", "updatedUser");
+  const [temp, setTemp] = useState("");
+  function useStickyState(defaultValue, key) {
+    const [value, setValue] = React.useState(() => {
+      const stickyValue = window.localStorage.getItem(key);
+      return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+    });
+    React.useEffect(() => {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value]);
+    return [value, setValue];
+  }
   const handleUsernameChange = (event) => {
+    event.preventDefault();
     setUsername(event.target.value);
+    setTemp(event.target.value);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -41,11 +55,10 @@ const App = props => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
+    setName(temp);
     console.log("handleSubmit");
-    
     axios({
       url: `${usersApi}/login`,
       method: "POST",
@@ -56,29 +69,73 @@ const App = props => {
       },
     })
       .then((res) => {
-        console.log(res);
+        if (res) {
+          props.history.push("/");
+        }
       })
       .catch(console.error);
   };
+  return (
+    <div className="App">
+      <Switch>
+        <Layout username={username}>
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => <Dashboard username={name} />}
+          />
+          <Route
+            path="/about"
+            exact
+            render={(routerProps) => <About {...routerProps} />}
+          />
+          <Route
+            path="/login"
+            render={(routerProps) => (
+              <LoginPage
+                {...routerProps}
+                username={username}
+                password={password}
+                email={email}
+                handleEmailChange={handleEmailChange}
+                handlePasswordChange={handlePasswordChange}
+                handleSubmit={handleSubmit}
+                handleUsernameChange={handleUsernameChange}
+              />
+            )}
+          />
+          <Route
+            path="/registration"
+            render={(routerProps) => (
+              <RegistrationPage
+                {...routerProps}
+                username={username}
+                password={password}
+                email={email}
+                handleEmailChange={handleEmailChange}
+                handlePasswordChange={handlePasswordChange}
+                handleSubmit={handleSubmit}
+                handleUsernameChange={handleUsernameChange}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/ideas/:ideatitle"
+            render={(routerProps) => <Idea {...routerProps} />}
+          />
+          <Route
+            exact
+            path="/ideacreate"
+            render={(routerProps) => <IdeaCreate username={username} />}
+          />
+          {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
+        </Layout>
+      </Switch>
+      {/* <Navigation /> */}
+    </div>
+  );
+};
 
-  
-    return (
-      <div className="App">
-        <Switch> 
-            <Layout username={username}>
-                <Route path="/" exact render={routerProps=> <Dashboard username={username} />} />
-    <Route path="/about" exact render={routerProps=> <About {...routerProps} />} />
-                <Route path="/login" render={routerProps=> <LoginPage username={username} password={password} email={email} handleEmailChange={handleEmailChange} handlePasswordChange={handlePasswordChange} handleSubmit={handleSubmit} handleUsernameChange={handleUsernameChange}/>}  />
-                <Route path="/registration" component={RegistrationPage} />
-                <Route exact path='/ideas/:ideatitle' render={routerProps => <Idea {...routerProps}/>}/>
-                <Route exact path='/ideacreate' render={routerProps => <IdeaCreate username={username}/>}/>
-                {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
-            </Layout>
-        </Switch> 
-        {/* <Navigation /> */}
-      </div>
-    );
-  
-}
-
-export default App
+const AppWithRouter = withRouter(App);
+export default AppWithRouter;

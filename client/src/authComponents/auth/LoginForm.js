@@ -1,12 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  withRouter,
+  Redirect,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 import "./LoginForm.css";
 const LoginForm = (props) => {
   // console.log('IdeaForm', idea)
-
-
   return (
-    <form className="NewIdeaForm" onSubmit={props.handleSubmit}>
+    <form className="NewIdeaForm" onSubmit={props.handleSubmit} >
       <div className="Idea-Create-Div-box">
         <label>Username: </label>
         <input
@@ -16,7 +21,6 @@ const LoginForm = (props) => {
           name="username"
           onChange={props.handleUsernameChange}
         />
-        
         <br />
         <label>Password: </label>
         <input
@@ -27,7 +31,6 @@ const LoginForm = (props) => {
           onChange={props.handlePasswordChange}
         />
         <br />
-
       </div>
       <div className="Idea-create-buttons">
         <button className="submit" type="submit">
