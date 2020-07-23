@@ -35,17 +35,17 @@ function Dashboard (props) {
             <div className='dashboard-title'>
                 <div className="Title-and-votes">
                     <div className="IconsBoxPost">
-                        <div className="PostUpBox">
+                        {/* <div className="PostUpBox">
                             <i className="material-icons">keyboard_arrow_up</i>
                             <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595186577/Untitled_8_1_ymtxrr.png" alt="whole lightbulb"/>
-                        </div>
+                        </div> */}
                         <div className="PostCountBox">
-                            <p><strong>{idea.votes}</strong></p>
+                            <p><img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595186577/Untitled_8_1_ymtxrr.png" alt="whole lightbulb"/> <strong>{idea.votes}</strong></p>
                         </div>
-                        <div className="PostDownBox">
+                        {/* <div className="PostDownBox">
                             <i className="material-icons">keyboard_arrow_down</i>
                             <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595188165/Untitled_8_2_glwnue.png" alt="Broken lightbulb"/>
-                        </div>
+                        </div> */}
                     </div>
                     <Link to={'/ideas/' + idea._id}> 
                         <h1 className='dashboard-idea-title feedtitle'>{idea.title}</h1>

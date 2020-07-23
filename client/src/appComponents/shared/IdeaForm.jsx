@@ -16,8 +16,7 @@ const IdeaForm = ({ idea, handleSubmit, handleChange, cancelPath}) => {
           onChange={handleChange}
         />
         <p className="Name-guidelines">
-          (You can post anonymously, but the world wants to hear <br />
-          from you and know who to credit for this awesome idea!)
+          (You can post anonymously, but the world wants to know who to credit for this awesome idea!)
         </p>
         {/* <br /> */}
         <label>Title: </label>
@@ -45,8 +44,8 @@ const IdeaForm = ({ idea, handleSubmit, handleChange, cancelPath}) => {
         <input
           className="Description-input"
           placeholder="Separated by comas"
-          value={idea.keywords}
-          name="keywords"
+          value={idea.keyarr}
+          name="keyarr"
           onChange={handleChange}
         />
         <br />

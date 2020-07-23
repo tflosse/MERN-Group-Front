@@ -7,7 +7,7 @@ import "./IdeaCreate.css";
 
 const IdeaCreate = (props) => {
   //   console.log('IdeaCreate props', props)
-  const [input, setInput] = useState({ username: props.username, title: "", desc: "", keywords: []});
+  const [input, setInput] = useState({ username: props.username, title: "", desc: "", keywords: [], keyarr: ''});
   const [idea, setIdea] = useState(null);
   
   const handleChange = (event) => {
@@ -22,6 +22,9 @@ const IdeaCreate = (props) => {
     event.preventDefault();
     console.log("handleSubmit");
     console.log(input)
+    let input2=input.keyarr.split(',')
+    input.keywords=input2
+    console.log(input.keywords)
     axios({
       url: `${ideasApi}/`,
       method: "POST",

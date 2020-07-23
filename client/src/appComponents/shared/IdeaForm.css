@@ -3,6 +3,7 @@
   flex-direction: column;
   align-content: center;
   font-family: "Bebas Neue";
+  letter-spacing: 0.02rem;
   margin-bottom: 10vh;
   padding: 20px;
   border: 1.5px solid #1d1c17;

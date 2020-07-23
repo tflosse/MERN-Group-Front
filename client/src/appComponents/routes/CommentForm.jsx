@@ -1,11 +1,11 @@
 import React from 'react'
 
-function CommentForm({ comment, handleSubmit, handleChange, username}){
+function CommentForm({ comment, handleSubmit, handleChange}){
     return (
     <form className="CommentForm" onSubmit={handleSubmit}>
         <input 
         placeholder="Username to display"
-        value={username}
+        value={comment.username}
         onChange={handleChange}
         name='username'
         /> 
