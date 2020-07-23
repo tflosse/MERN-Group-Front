@@ -59,8 +59,12 @@
 }
 .dashboard-keytags {
     display: flex;
+    flex-wrap: wrap; 
 }
-
+.dashboard-title-username-container {
+    display: flex; 
+    flex-direction: column; 
+}
 .dashboard-ind-key {
     margin-right: 10px;
     background-color: #41bab2;

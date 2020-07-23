@@ -54,6 +54,7 @@ justify-items: center;
 }
 .dashboard-keytags {
     display: flex;
+    flex-wrap: wrap; 
 }
 
 .dashboard-ind-key {
@@ -148,7 +149,10 @@ justify-items: center;
 
 @media only screen and (min-width: 600px) {
     .dashboard-idea-title {
-        font-size: 30px; 
+        font-size: 40px !important; 
+    }
+    .dashboard-idea-author {
+        font-size: 23px !important; 
     }
   }
 .material-icons:hover {
