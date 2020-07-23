@@ -129,7 +129,7 @@ function Idea(props) {
                     />
                   </div>
                   <div className="PostCountBox">
-                    <p>{ideas.votes}</p>
+                    <p><strong>{ideas.votes}</strong></p>
                   </div>
                   <div className="PostDownBox">
                     <i className="material-icons">keyboard_arrow_down</i>

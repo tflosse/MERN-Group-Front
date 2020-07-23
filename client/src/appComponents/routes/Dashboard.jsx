@@ -40,7 +40,7 @@ function Dashboard (props) {
                             <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595186577/Untitled_8_1_ymtxrr.png" alt="whole lightbulb"/>
                         </div>
                         <div className="PostCountBox">
-                            <p>{idea.votes}</p>
+                            <p><strong>{idea.votes}</strong></p>
                         </div>
                         <div className="PostDownBox">
                             <i className="material-icons">keyboard_arrow_down</i>
