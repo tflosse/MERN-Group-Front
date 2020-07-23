@@ -37,6 +37,12 @@ li {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;  
   }
+  .navbar-nav {
+     display: flex; 
+     flex-direction: column; 
+     justify-content: center; 
+     align-content: center; 
+  }
 .material-icons {
     font-size: 1.6rem;
     height: 1em;
@@ -46,8 +52,11 @@ li {
 }
 .account-info {
     display: flex;
-    width: 60px;
-    justify-content: space-between;
+    /* width: 30px; 
+    flex-direction: row; 
+    margin-right: 25vw;  
+    margin-left: 26vw;  */
+    justify-content: center; 
 }
 .Logo {
     max-width: 80px; 
@@ -65,12 +74,8 @@ li {
 .navbar-toggler:active {
     outline: 0 0 0 1pt #1d1c17 !important; 
 }
-.ideas {
-    margin-left: 5vw;
-}
-.about{
-    margin-left: 20vw;
-}
+
+
 .about, .login {
     font-size: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
@@ -86,3 +91,13 @@ li {
     transition: all 200ms ease;
 }
 
+@media only screen and (min-width: 728px) {
+.ProfileContainer {
+    padding-left: 25vw;  
+}
+}
+@media only screen and (min-width: 1024px) {
+    .ProfileContainer {
+        padding-left: 40vw;  
+    }
+    }
