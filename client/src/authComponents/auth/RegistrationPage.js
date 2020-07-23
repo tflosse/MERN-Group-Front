@@ -13,7 +13,7 @@ import { usersApi, ideasApi } from "../../apiConfig.js";
 const Login = (props) => {
   return (
       <>
-    <h2>Sign Up</h2>
+    <h2 className="log-titles">Sign Up</h2>
       <RegistrationForm
         handleUsernameChange={props.handleUsernameChange}
         handlePasswordChange={props.handlePasswordChange}

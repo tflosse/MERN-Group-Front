@@ -70,7 +70,9 @@ const App = (props) => {
     })
       .then((res) => {
         if (res) {
-          props.history.push("/");
+          props.history.push("/home");
+          setPassword("");
+          setEmail("")
         }
       })
       .catch(console.error);
@@ -78,19 +80,8 @@ const App = (props) => {
   return (
     <div className="App">
       <Switch>
-        <Layout username={username}>
-          <Route
-            path="/"
-            exact
-            render={(routerProps) => <Dashboard username={name} />}
-          />
-          <Route
-            path="/about"
-            exact
-            render={(routerProps) => <About {...routerProps} />}
-          />
-          <Route
-            path="/login"
+      <Route
+            path="/" exact
             render={(routerProps) => (
               <LoginPage
                 {...routerProps}
@@ -119,6 +110,18 @@ const App = (props) => {
               />
             )}
           />
+        <Layout username={username}>
+          <Route
+            path="/home"
+            exact
+            render={(routerProps) => <Dashboard username={name} />}
+          />
+          <Route
+            path="/about"
+            exact
+            render={(routerProps) => <About {...routerProps} />}
+          />
+          
           <Route
             exact
             path="/ideas/:ideatitle"

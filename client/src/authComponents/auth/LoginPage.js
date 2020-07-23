@@ -17,7 +17,7 @@ const Login = (props) => {
 
   return (
       <>
-    <h2>Log In</h2>
+    <h2 className="log-titles">Log In</h2>
       <LoginForm
         handleUsernameChange={props.handleUsernameChange}
         handlePasswordChange={props.handlePasswordChange}
