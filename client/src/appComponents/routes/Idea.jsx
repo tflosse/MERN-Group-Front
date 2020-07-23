@@ -14,7 +14,7 @@ function Idea(props) {
 
 
   let ideaId = props.match.params.ideatitle;
-  console.log("api add: ", `${ideasApi}/id/${ideaId}`);
+  console.log("api add: ", `${ideasApi}/${ideaId}`);
 
   const [ideas, setIdea] = useState({});
 
@@ -106,6 +106,42 @@ function Idea(props) {
   if (isUpdated) {
     window.location.reload();
   }
+
+  const handleUpvote = async (event) => {
+    try {
+      const response = await axios(`${ideasApi}/${ideaId}`);
+      console.log("Idea - response", response);
+      response.data.votes +=1
+      let newData = response.data
+      await axios({
+        url: `${ideasApi}/${ideaId}`,
+        method: "PUT",
+        data: newData
+      })
+      setIsUpdated(true)
+    } catch (err) {
+      console.error(err);
+    }
+  console.log('handled Upvote')
+  }
+
+const handleDownvote = async (event) => {
+  try {
+    const response = await axios(`${ideasApi}/${ideaId}`);
+    console.log("Idea - response", response);
+    response.data.votes -=1
+    let newData = response.data
+    await axios({
+      url: `${ideasApi}/${ideaId}`,
+      method: "PUT",
+      data: newData
+    })
+    setIsUpdated(true)
+  } catch (err) {
+    console.error(err);
+  }
+}
+
   return (
     <>
       <div className="FeedUltimateContainer">
@@ -124,7 +160,8 @@ function Idea(props) {
               <div className="Title-and-votes">
                 <div className="IconsBoxPost">
                   <div className="PostUpBox">
-                    <i className="material-icons">keyboard_arrow_up</i>
+                    <i className="material-icons"
+                    onClick={handleUpvote}>keyboard_arrow_up</i>
                     <img
                       className="LightbulbIcon"
                       src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595186577/Untitled_8_1_ymtxrr.png"
@@ -135,7 +172,8 @@ function Idea(props) {
                     <p><strong>{ideas.votes}</strong></p>
                   </div>
                   <div className="PostDownBox">
-                    <i className="material-icons">keyboard_arrow_down</i>
+                    <i className="material-icons"
+                    onClick={handleDownvote}>keyboard_arrow_down</i>
                     <img
                       className="LightbulbIcon"
                       src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595188165/Untitled_8_2_glwnue.png"
