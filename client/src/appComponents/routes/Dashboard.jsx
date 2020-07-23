@@ -7,7 +7,7 @@ import axios from 'axios'
 
 function Dashboard (props) {
     const checkmark = '✔';
-    console.log(props.username)        
+    console.log(ideasApi)        
       const [ideas, setIdeas] = useState([]);
       const [isDeleted,setIsDeleted] = useState(false)
       useEffect(() => {

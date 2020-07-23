@@ -5,13 +5,10 @@ import { usersApi, ideasApi } from "../../apiConfig.js";
 import CommentForm from "./CommentForm";
 import { Redirect } from "react-router-dom";
 import DeleteComment from "./DeleteComment";
-import DeletePost from "./DeletePost";
 
 function Idea(props) {
   const checkmark = "✔";
   console.log("Idea", props);
-  let myUsername=props.username
-
 
   let ideaId = props.match.params.ideatitle;
   console.log("api add: ", `${ideasApi}/id/${ideaId}`);
@@ -31,7 +28,7 @@ function Idea(props) {
     makeAPICall();
   }, []);
 
-  let postUsername=ideas.username
+  console.log("keytags", ideas);
   function keytags(array) {
     if (!array) return <p>Loading...</p>;
     else {
@@ -147,9 +144,7 @@ function Idea(props) {
                   {ideas.title}
                 </h1>
                 <h3 className="dashboard-idea-author">{ideas.username}</h3>
-                {/* <button>Delete</button> */}
-                <DeletePost myUsername={myUsername} postUsername={postUsername} ideaId={ideaId}/>              
-            </div>
+              </div>
             </div>
             <div className="dashboard-desc">
               <p>{ideas.description}</p>

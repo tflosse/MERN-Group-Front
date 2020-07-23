@@ -34,9 +34,9 @@ const LoginForm = (props) => {
         <br />
       </div>
       <div className="Idea-create-buttons">
-        <Link to='/home'><button className="submit" type="submit">
+        <button className="submit" type="submit">
           Submit
-        </button></Link>
+        </button>
         <Link to='/registration'><button className="submit">
           Sign Up
         </button></Link>
