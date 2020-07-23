@@ -39,7 +39,7 @@ li {
   }
 
 .Logo {
-    max-width: 50px; 
+    max-width: 80px; 
 }
 
 .navbar-toggler-icon {
@@ -54,10 +54,24 @@ li {
 .navbar-toggler:active {
     outline: 0 0 0 1pt #1d1c17 !important; 
 }
+.ideas {
+    margin-left: 5vw;
+}
+.about{
+    margin-left: 20vw;
+}
+.about, .login {
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 .navLink {
     color: #1d1c17; 
+    -webkit-transition: all 300ms ease;
 }
 .navLink:hover {
     text-decoration: underline #f3a928; 
     color: #41bab2; 
+    font-weight: bolder;
+    transition: all 200ms ease;
 }
+

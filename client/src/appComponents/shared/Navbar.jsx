@@ -50,7 +50,7 @@ const  NavBar = (props)=> {
               </Link>
             </a> */}
 
-            <a className="nav-item nav-link">
+            <a className="nav-item nav-link ideas">
               <Link to="/" className="navLink">
                 <div
                   className="togglewrapperrr"
@@ -89,7 +89,19 @@ const  NavBar = (props)=> {
                 <li><NavLink to='/' className='navLink2'> About </NavLink></li>
                 <li><NavLink to='/' className='navLink2'> Settings </NavLink></li>
             </ul> */}
-            <a className="nav-item nav-link">
+              <a className="nav-item nav-link about">
+                <Link to="/about" className="navLink">
+                  <div
+                    className="togglewrapperrr"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse.show"
+                  >
+                    ABOUT
+                  </div>
+                </Link>
+              </a>
+
+              <a className="nav-item nav-link login">
               <Link to="/login" className="navLink">
                 <div
                   className="togglewrapperrr"
@@ -100,7 +112,6 @@ const  NavBar = (props)=> {
                 </div>
               </Link>
             </a>
-            
           </div>
         </div>
       </nav>

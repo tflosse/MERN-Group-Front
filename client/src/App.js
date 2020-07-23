@@ -20,6 +20,7 @@ import RegistrationPage from './authComponents/auth/RegistrationPage';
 
 // Ideate Components
 import Layout from './appComponents/shared/Layout';
+import About from './appComponents/shared/About';
 import Dashboard from './appComponents/routes/Dashboard';
 import Idea from './appComponents/routes/Idea';
 import IdeaCreate from './appComponents/routes/IdeaCreate';
@@ -66,10 +67,11 @@ const App = props => {
         <Switch> 
             <Layout username={username}>
                 <Route path="/" exact render={routerProps=> <Dashboard username={username} />} />
+    <Route path="/about" exact render={routerProps=> <About {...routerProps} />} />
                 <Route path="/login" render={routerProps=> <LoginPage username={username} password={password} email={email} handleEmailChange={handleEmailChange} handlePasswordChange={handlePasswordChange} handleSubmit={handleSubmit} handleUsernameChange={handleUsernameChange}/>}  />
                 <Route path="/registration" component={RegistrationPage} />
                 <Route exact path='/ideas/:ideatitle' render={routerProps => <Idea {...routerProps}/>}/>
-                <Route exact path='/ideacreate' render={routerProps => <IdeaCreate {...routerProps}/>}/>
+                <Route exact path='/ideacreate' render={routerProps => <IdeaCreate username={username}/>}/>
                 {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
             </Layout>
         </Switch> 
