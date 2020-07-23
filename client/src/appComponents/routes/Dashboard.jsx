@@ -47,11 +47,13 @@ function Dashboard (props) {
                             <img className="LightbulbIcon" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595188165/Untitled_8_2_glwnue.png" alt="Broken lightbulb"/>
                         </div> */}
                     </div>
+                    <div className="dashboard-ideas-title-author-container">
                     <Link to={'/ideas/' + idea._id}> 
                         <h1 className='dashboard-idea-title feedtitle'>{idea.title}</h1>
                     </Link> 
+                    <h1 className='dashboard-idea-author'>{idea.username}</h1>
+                    </div>
                 </div>
-                <h1 className='dashboard-idea-author'>{idea.username}</h1>
             </div>
             <div className='dashboard-desc'>
                 <p>{idea.description}</p>

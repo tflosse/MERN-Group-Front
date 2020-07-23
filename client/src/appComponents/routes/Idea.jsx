@@ -181,11 +181,13 @@ const handleDownvote = async (event) => {
                     />
                   </div>
                 </div>
+                <div className="dashboard-title-username-container">
                 <h1 className="dashboard-idea-title feedtitle">
                   {ideas.title}
                 </h1>
                 <h3 className="dashboard-idea-author">{ideas.username}</h3>
                 {/* <button>Delete</button> */}
+                </div> 
                 <DeletePost myUsername={myUsername} postUsername={postUsername} ideaId={ideaId}/>              
             </div>
             </div>
