@@ -25,6 +25,7 @@ const LoginForm = (props) => {
         <label>Password: </label>
         <input
           className="Title-input"
+          type="password"
           placeholder="Password"
           value={props.password}
           name="password"
