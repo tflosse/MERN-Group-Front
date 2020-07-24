@@ -12,6 +12,7 @@ const LoginForm = (props) => {
   // console.log('IdeaForm', idea)
   return (
     <form className="NewIdeaForm" onSubmit={props.handleSubmit} >
+      <h4>Log in</h4>
       <div className="Idea-Create-Div-box">
         <label>Username: </label>
         <input

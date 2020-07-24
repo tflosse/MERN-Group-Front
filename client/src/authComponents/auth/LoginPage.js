@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import { usersApi, ideasApi } from "../../apiConfig.js";
+import './LoginPage.css'
 
 const Login = (props) => {
   
@@ -17,8 +18,9 @@ const Login = (props) => {
 
   return (
       <>
-    <h2 className="log-titles">Log In</h2>
+      <img className="Login-image" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595024102/Untitled_2_tcxox8.jpg" alt="Ideate Logo"/>
       <LoginForm
+      
         handleUsernameChange={props.handleUsernameChange}
         handlePasswordChange={props.handlePasswordChange}
         handleEmailChange={props.handleEmailChange}

@@ -35,12 +35,12 @@ const DeletePost = (props) => {
     return (
       <div className="App">
         <Popup
-          trigger={<button className="btn btn-warning">Delete Post</button>}
-          position="top left"
+          trigger={<button className="btn btn-warning">Delete</button>}
+          position="top right"
         >
           {(close) => (
             <div>
-              <span>Are you sure you want to delete?</span>
+              <span>Are you sure you want to delete this post?</span>
               <button className="btn btn-warning" onClick={handleClick}>
                 Yes
               </button>
