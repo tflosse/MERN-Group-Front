@@ -63,7 +63,7 @@ function Dashboard (props) {
        ));
 
     return (
-        <div className="FeedUltimateContainer">
+        <div className="FeedUltimateContainer Logged-views">
             <div className="FeedHeaderContainer">
                 <div className="FeedHeader">
                     <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      

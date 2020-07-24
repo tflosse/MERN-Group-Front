@@ -105,7 +105,7 @@ function Idea(props) {
 
   return (
     <>
-      <div className="FeedUltimateContainer">
+      <div className="FeedUltimateContainer Logged-views">
         {/* <div className="FeedHeaderContainer">
           <div className="FeedHeader">
             <img

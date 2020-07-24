@@ -6,7 +6,7 @@ import linkedIcon from './linkedIcon.svg';
 const About = () => {
 
     return(
-        <div className="About-page">
+        <div className="About-page Logged-views">
             <div className="App-container">
                 <h4>This Project</h4>
                 <p> We provide innovators, developers, and creators a communication 

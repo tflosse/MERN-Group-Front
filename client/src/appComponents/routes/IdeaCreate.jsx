@@ -39,7 +39,7 @@ const IdeaCreate = (props) => {
   };
 
   return (
-    <>
+    <div className="Logged-views">
       <div className="Post-submit-container">
         <div className="SubmitIconContainer">
           <img
@@ -55,7 +55,7 @@ const IdeaCreate = (props) => {
           cancelPath="/home"
         />
       </div>
-    </>
+    </div>
   );
 };
 export default IdeaCreate;
