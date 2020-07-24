@@ -1,13 +1,21 @@
-import React from "react";
-import {BrowserRouter as Link} from "react-router-dom";
+import React, { Component, useState } from "react";
+import {
+  BrowserRouter as Router,
+  withRouter,
+  Redirect,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 import "./LoginForm.css";
 import Popup from "reactjs-popup";
-
 const LoginForm = (props) => {
+  const [display, setDisplay] = useState(false);
 
+  
   return (
     <form className="NewIdeaForm" onSubmit={props.handleSubmit}>
-      <br /><h4>Log in</h4>
+      <h4>Log in</h4>
       <div className="Idea-Create-Div-box">
         <label>Email:</label>
         <textarea
@@ -31,28 +39,23 @@ const LoginForm = (props) => {
         <br />
       </div>
       <div className="Idea-create-buttons">
-        <Popup
-          trigger={
-            <button className="submit" type="submit">
-              Submit
-            </button>
-          }
-          position="top right"
+        
+        <button
+          onClick={() => setDisplay(true)}
+          className="submit"
+          type="submit"
         >
-          {(close) => (
-            <div>
-              <span>Invalid Login Information</span>
-              <button className="close" onClick={close}>
-                &times;
-              </button>
-            </div>
-          )}
-        </Popup>
+          Submit
+        </button>
 
         <Link to="/registration">
           <button className="submit">Sign Up</button>
         </Link>
-      </div>
+        </div>
+        
+        {display ? `${props.valid}` : ""}
+      
+      
     </form>
   );
 };

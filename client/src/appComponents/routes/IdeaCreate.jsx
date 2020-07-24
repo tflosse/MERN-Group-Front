@@ -8,6 +8,7 @@ const IdeaCreate = (props) => {
 
   const [input, setInput] = useState({ username: props.username, title: "", desc: "", keywords: [], keyarr: ''});
   const [idea, setIdea] = useState(null);
+  const [time, setTime] = useState()
   
   const handleChange = (event) => {
     console.log("event", event.target.name, event.target.value);
@@ -33,6 +34,8 @@ const IdeaCreate = (props) => {
       .then((res) => {
         console.log(res)
           setIdea({ createdItem: res.data.idea })
+          const stamp = new Date(res.data.createdAt)
+          console.log(stamp)
           props.history.push('/home')
         })
       .catch(console.error);

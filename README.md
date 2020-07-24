@@ -148,18 +148,23 @@ Unless otherwise noted, time is listed in hours:
 | Draft React Architecture | H | Tam | 30min. | 30min. |
 | List MVP and Post-MVP features based on team discussion | H | Tam | 1 | 45min. |
 
+
 **DURING**
 | Component | Priority | Team Member | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | H |  |  |  |
-|  | M |  |  |  |
+| Create Login/Registration Pages and Forms | H | Nick | 6 | 6 |
+| Seed Database | H | Nick/Tam | 3 | 6 |
+| Login/Registration Redirects | H | Nick | 2 | 2 |
+| Create persistent states and move to root directory | H | Nick | 2 | 2 |
+| Create ideas/comments database and api endpoints | H | Nick | 2 | 2 |
+| Deploy ideas/comments database to heroku | H | Nick | 1 | 1 |
+| Create Delete Post functionality with redirects | H | Nick | 2 | 2 |
+| Delete Post Popup Modal | M | Nick | 2 | 2 |
+| Create user authorization database with authorized requests | M | Nick | 10 | 10 |
+| Deploy Auth DB and API | M | Nick | 5 | 5 |
+| Integrate Authorization Functionality | M | Nick | 4 | 4 |
+| Create Upvote/Downvote Functionality | M | Nick | 3 | 3 |
+| Login Validity Feedback | M | Nick | 2 | 2 |
 |  | L |  |  |  |
 |  | L |  |  |  |
 | Total | H |  |  |  |

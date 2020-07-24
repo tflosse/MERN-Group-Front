@@ -14,6 +14,10 @@ function Idea(props) {
   let ideaId = props.match.params.ideatitle;
 
   const [ideas, setIdea] = useState({});
+  const converter = (stamp)=>{
+    let foo =  (new Date(stamp))
+    return foo.toLocaleString()
+}
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -62,7 +66,8 @@ function Idea(props) {
                 <span className="dashboard-comment-name"><strong>{comm.username}</strong></span> commented:
               </p>
               <DeleteComment comm={comm} ideaId={ideaId} />
-              <p className="dashboard-comment-timestamp">{comm.timestamp}</p>
+              <p className="dashboard-comment-timestamp">{converter(ideas.createdAt)}</p>
+              <br />
             </div>
             <p className="dashboard-comment-body">{comm.commentBody}</p>
           </div>
@@ -130,6 +135,7 @@ function Idea(props) {
                 </div> 
                 <DeletePost myUsername={myUsername} postUsername={postUsername} ideaId={ideaId}/>              
             </div>
+            {converter(ideas.createdAt)}
             </div>
             <div className="dashboard-desc">
               <p>{ideas.description}</p>

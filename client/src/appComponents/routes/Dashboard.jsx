@@ -8,6 +8,7 @@ import axios from 'axios'
 function Dashboard (props) {
     console.log(props.username)        
       const [ideas, setIdeas] = useState([]);
+      const [time, setTime] = useState()
 
       useEffect(() => {
         const makeAPICall = async () => {
@@ -28,7 +29,11 @@ function Dashboard (props) {
         ))
         return keytagArr
     }
-
+    
+    const converter = (stamp)=>{
+        let foo =  (new Date(stamp))
+        return foo.toLocaleString()
+    }
       const ideaArray= ideas.map((idea)=> (
         <div className='dashboard-creative-idea'>
             <div className='dashboard-title'>
@@ -51,6 +56,7 @@ function Dashboard (props) {
                         <h1 className='dashboard-idea-title feedtitle'>{idea.title}</h1>
                     </Link> 
                     <h1 className='dashboard-idea-author'>{idea.username}</h1>
+                    {converter(idea.createdAt)}
                     </div>
                 </div>
             </div>
