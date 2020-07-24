@@ -1,7 +1,6 @@
 import axios from "axios";
 import { ideasApi, usersApi } from '../../apiConfig'
-import React, { useState, useEffect } from "react";
-import { Link, Redirect } from 'react-router-dom'
+import React, { useState } from "react";
 
 function DeleteComment (props) {
         const [isDeleted,setIsDeleted] = useState(false)

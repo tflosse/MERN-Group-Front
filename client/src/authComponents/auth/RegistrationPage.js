@@ -1,15 +1,5 @@
-import React, { useState } from "react";
-import LoginForm from "./LoginForm";
+import React from "react";
 import RegistrationForm from "./RegistrationForm";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom";
-import axios from "axios";
-import { usersApi, ideasApi } from "../../apiConfig.js";
 const Login = (props) => {
   return (
       <>

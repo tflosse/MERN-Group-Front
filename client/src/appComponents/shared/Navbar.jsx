@@ -1,17 +1,8 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const NavBar = (props) => {
-  //   const [temp, setTemp] = useState('')
-  //   const login = () => {
-  //     if (props.username != ''){
-  //       setTemp(`WELCOME, ${props.username.toUpperCase()}`)
-  //   }else{
-  //     setTemp('LOG IN')
-  //   }
-  // }
-
   return (
     <header>
       <nav className="navbar fixed-top navbar-expand-sm navbar-light">
@@ -35,87 +26,49 @@ const NavBar = (props) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav navbar-light">
-            {/* <a className="nav-item nav-link active">
-              {" "}
-              <span className="sr-only">(current)</span>
-              <Link to="/" className="navLink">
-                <div
-                  className="togglewrapperrr"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                >
-                  {" "}
-                  DASHBOARD{" "}
-                </div>
-              </Link>
-            </a> */}
-
-            <a className="nav-item nav-link ideas">
-              <Link to="/home" className="navLink">
-                <div
-                  className="togglewrapperrr"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                >
-                  HOME
-                </div>
-              </Link>
-            </a>
-
-            {/* <a className="nav-item nav-link">
-              <Link to="/" className="navLink">
-                <div
-                  className="togglewrapperrr"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                >
-                  INBOX
-                </div>
-              </Link>
-            </a> */}
-
-            <a className="nav-item nav-link">
-              <Link to="/ideacreate" className="navLink">
-                <div
-                  className="togglewrapperrr"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                >
-                  NEW IDEA
-                </div>
-              </Link>
-            </a>
-            {/* <ul className='Navbar-personal'>
-                <li><NavLink to='/' className='navLink2'> About </NavLink></li>
-                <li><NavLink to='/' className='navLink2'> Settings </NavLink></li>
-            </ul> */}
-            <a className="nav-item nav-link about">
-              <Link to="/about" className="navLink">
-                <div
-                  className="togglewrapperrr"
-                  data-toggle="collapse"
-                  data-target=".navbar-collapse.show"
-                >
-                  ABOUT
-                </div>
-              </Link>
-            </a>
-            <div className="ProfileContainer">
-            <a className="nav-item nav-link login">
+            <Link to="/home" className="navLink ideas">
+              <div
+                className="togglewrapperrr"
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+              >
+                HOME
+              </div>
+            </Link>
+            <Link to="/ideacreate" className="navLink">
+              <div
+                className="togglewrapperrr"
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+              >
+                NEW IDEA
+              </div>
+            </Link>
+            <Link to="/about" className="navLink about">
+              <div
+                className="togglewrapperrr"
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+              >
+                ABOUT
+              </div>
+            </Link>
+            
               <Link to="/" className="navLink">
                 <div
                   className="togglewrapperrr account-info"
                   data-toggle="collapse"
                   data-target=".navbar-collapse.show"
                 >
-                  <span className="material-icons">account_circle</span>{" "}
-                  <span className="nav-username" > {props.username}</span>
+                  <div className="ProfileContainer">
+                    <span className="material-icons">account_circle</span>{" "}
+                    <span className="nav-username"> {props.username}</span>
+                  </div>
                 </div>
               </Link>
-            </a>
             </div>
           </div>
-        </div>
+        
       </nav>
     </header>
   );

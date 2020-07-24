@@ -33,8 +33,8 @@ const About = () => {
                                 experience and security as I continue to learn lots about latest tech trends.</p>
                         </div>
                         <div className="member--links">
-                            <button><a target="_blank" href="https://www.linkedin.com/in/nicholas-dipreta/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
-                            <button><a target="_blank" href="https://github.com/NickDiPreta"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nicholas-dipreta/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/NickDiPreta"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
                         </div>
                     </div>
                     <div className="member-container">
@@ -52,8 +52,8 @@ const About = () => {
                                 ensuring users could navigate, read, and delete posts and comments.</p>
                         </div>
                         <div className="member--links">
-                            <button><a target="_blank" href="https://www.linkedin.com/in/jim-j-chen/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
-                            <button><a target="_blank" href="https://github.com/jadecity2020"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jim-j-chen/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/jadecity2020"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
                         </div>
                     </div>
                     <div className="member-container">
@@ -72,8 +72,8 @@ const About = () => {
                                 development of this UI.</p>
                         </div> 
                         <div className="member--links">
-                            <button><a target="_blank" href="https://www.linkedin.com/in/culhaneandrew/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
-                            <button><a target="_blank" href="https://github.com/drewculhane"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/culhaneandrew/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/drewculhane"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
                         </div>
                     </div>
                     <div className="member-container">
@@ -94,8 +94,8 @@ const About = () => {
                             I am excited for the projects that might be born here!</p>
                     </div>
                     <div className="member--links">
-                            <button><a target="_blank" href="https://www.linkedin.com/in/tflosse/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
-                            <button><a target="_blank" href="https://github.com/tflosse"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/tflosse/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
+                            <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/tflosse"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
                         </div>
                 </div>
                 </div>

@@ -1,16 +1,10 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  withRouter,
-  Redirect,
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom";
+import {BrowserRouter as Link} from "react-router-dom";
 import "./LoginForm.css";
 import Popup from "reactjs-popup";
+
 const LoginForm = (props) => {
-  // console.log('IdeaForm', idea)
+
   return (
     <form className="NewIdeaForm" onSubmit={props.handleSubmit}>
       <h4>Log in</h4>
@@ -48,9 +42,9 @@ const LoginForm = (props) => {
           {(close) => (
             <div>
               <span>Invalid Login Information</span>
-              <a className="close" onClick={close}>
+              <button className="close" onClick={close}>
                 &times;
-              </a>
+              </button>
             </div>
           )}
         </Popup>

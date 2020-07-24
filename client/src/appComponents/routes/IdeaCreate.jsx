@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { usersApi, ideasApi } from "../../apiConfig";
 import IdeaForm from "../shared/IdeaForm";
-import Layout from "../shared/Layout";
 import "./IdeaCreate.css";
 
 const IdeaCreate = (props) => {
-  //   console.log('IdeaCreate props', props)
+
   const [input, setInput] = useState({ username: props.username, title: "", desc: "", keywords: [], keyarr: ''});
   const [idea, setIdea] = useState(null);
   
@@ -45,7 +44,7 @@ const IdeaCreate = (props) => {
         <div className="SubmitIconContainer">
           <img
             src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595352949/light-bulb-icon-cartoon-isolated-black-and-white-vector-25740587_1_1_sa7lpw.png"
-            alt="Lightbulb Image"
+            alt="Lightbulb"
           />
         </div>
         <IdeaForm

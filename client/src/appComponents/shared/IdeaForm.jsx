@@ -1,24 +1,11 @@
 import React from "react";
-import autosize from "autosize";
 import { Link } from "react-router-dom";
 import "./IdeaForm.css";
 
 const IdeaForm = ({ idea, handleSubmit, handleChange, cancelPath}) => {
-  // console.log('IdeaForm', idea)
   return (
     <form className="NewIdeaForm" onSubmit={handleSubmit}>
       <div className="Idea-Create-Div-box">
-        {/* <label>Username: </label>
-        <input
-          className="Description-input"
-          value={idea.username}
-          name="username"
-          onChange={handleChange}
-        />
-        <p className="Name-guidelines">
-          (You can post anonymously, but the world wants to know who to credit for this awesome idea!)
-        </p> */}
-        {/* <br /> */}
         <label>Title: </label>
         <input
           className="Title-input"

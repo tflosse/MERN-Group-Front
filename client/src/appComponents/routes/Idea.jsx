@@ -9,7 +9,7 @@ import DeletePost from "./DeletePost";
 import Votes from './Votes';
 
 function Idea(props) {
-  // const checkmark = "✔";
+
   let myUsername=props.username
   let ideaId = props.match.params.ideatitle;
 
@@ -75,7 +75,7 @@ function Idea(props) {
   useEffect(() => {
     const makeAPICall = async () => {
       try {
-        const response = await axios(`${ideasApi}/${ideaId}`);
+        const response = await axios(`${ideasApi}/ideas/${ideaId}`);
         setComment({ comment: response.data.comments });
       } catch (err) {
         console.error(err);
@@ -86,14 +86,12 @@ function Idea(props) {
   const handleChange = (event) => {
     setComment({
       ...comment,
-      username:props.username,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("comment is ", comment)
-    await axios({
+    axios({
       url: `${ideasApi}/comment/${ideaId}`,
       method: "PUT",
       data: comment,
