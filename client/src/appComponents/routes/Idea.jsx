@@ -58,8 +58,8 @@ function Idea(props) {
         return (
           <div className="CommentContainer">
             <div className="Comment-user-and-timestamp">
-              <p className="dashboard-comment-name">
-                <strong>{comm.username}</strong> commented:
+              <p>
+                <span className="dashboard-comment-name"><strong>{comm.username}</strong></span> commented:
               </p>
               <DeleteComment comm={comm} ideaId={ideaId} />
               <p className="dashboard-comment-timestamp">{comm.timestamp}</p>
@@ -106,7 +106,7 @@ function Idea(props) {
   return (
     <>
       <div className="FeedUltimateContainer">
-        <div className="FeedHeaderContainer">
+        {/* <div className="FeedHeaderContainer">
           <div className="FeedHeader">
             <img
               className="FeedHeaderAnimation"
@@ -114,7 +114,7 @@ function Idea(props) {
               alt="Flashing Lightbulb"
             />
           </div>
-        </div>
+        </div> */}
         <div className="MainFeed">
           <div className="dashboard-creative-idea">
             <div className="dashboard-title">

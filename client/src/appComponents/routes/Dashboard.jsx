@@ -68,7 +68,7 @@ function Dashboard (props) {
                 <div className="FeedHeader">
                     <img className="FeedHeaderAnimation" src="https://res.cloudinary.com/dgmpgmo60/image/upload/v1595116789/Untitled_7_2_vm15aq.png" alt="Flashing Lightbulb"/>      
                 </div>
-                <h4 className="Brilliant"> {`What Brilliant Ideas did the world have while you were gone, ${props.username}`}</h4>
+                <h4 className="Brilliant"> {`What Brilliant Ideas did the world have while you were gone, ${props.username} ?`}</h4>
             </div>
             <div className="MainFeed">
                 {ideaArray}

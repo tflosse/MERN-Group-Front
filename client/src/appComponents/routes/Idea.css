@@ -38,8 +38,12 @@
     align-self: flex-start; 
     margin-left: 2vw; 
 }
+.PostUpBox {
+    margin-bottom: -3.5vh;
+}
 .PostDownBox {
     margin-top: -2vh; 
+    margin-bottom: -3vh;
 }
 
 .dashboard-idea-title {
@@ -75,7 +79,7 @@
 }
 
 .dashboard-comments-section{
-    margin-left:20px;
+    margin: 0 15px;
 }
 .FeedHeaderContainer {
     margin-top: 80px; 
@@ -124,17 +128,18 @@
     justify-content: space-between; 
 }
 .CommentContainer {
-   border: 2px dotted #41bab2; 
+   border: 2px dotted #189b92;
+   background-color: #41bab2e7; 
    padding-left: 2vw; 
    padding-right: 2vw; 
-   padding-top: 3vh; 
+   padding-top: 2vh; 
    padding-bottom: 1vh; 
-   margin-bottom: 2vh; 
+   margin-bottom: 3vh; 
 }
 .deleteicon {
     position: absolute;
-    top: -10px;
-    right: 5px;
+    top: -5px;
+    right: 10px;
     cursor: pointer;
     -webkit-transition: all 300ms ease;
 }
@@ -143,6 +148,9 @@
     transition: all 200ms ease;
 }
 
+.dashboard-comment-name {
+    color:rgb(243,168,40);
+}
 
 .AddComment {
     margin-top: 5vh;
@@ -167,8 +175,8 @@
     border: none;
     width: 80px;
     position: absolute;
-    left: 45%;
-    top: 85px;
+    left: 37vw;
+    top: 50px;
     padding: 3px 10px 0 10px;
     font-family: "Bebas Neue";
     letter-spacing: 0.02rem;

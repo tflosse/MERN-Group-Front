@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.FeedUltimateContainer {
+/* .FeedUltimateContainer {
     max-width: 90vw; 
-}
+} */
 .dashboard-creative-idea {
-    margin-top:70px; 
-    border: 1px solid black;
+    margin: 70px 20px; 
+    background-color: #f7f7f8dc;
+    /* border: 1px solid black; */
     padding-left: 20px;
     padding-right: 20px;
-    margin-left:20px;
-    margin-right: 20px;
-    margin-bottom: 70px; 
 }
 .dashboard-title {
     display: flex;
@@ -70,7 +68,10 @@ justify-items: center;
     margin-left:20px;
 }
 .FeedHeaderContainer {
-    margin-top: 80px; 
+    background-color: #f7f7f8;
+    border-radius: 5px;
+    margin-top: 50px; 
+    padding: 20px;
     display: flex; 
     justify-content: center; 
 }
@@ -215,6 +216,6 @@ justify-items: center;
     display: flex; 
     flex-direction: column; 
     align-content: center; 
-    justify-content: center; 
+    justify-content: center;
     }
 }
