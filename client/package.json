@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "autosize": "^4.0.2",
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "local-storage": "^2.0.0",
     "material-design-icons": "^3.0.1",
     "nstall": "^0.2.0",

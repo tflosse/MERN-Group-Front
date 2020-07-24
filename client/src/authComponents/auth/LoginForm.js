@@ -8,19 +8,21 @@ import {
   Link,
 } from "react-router-dom";
 import "./LoginForm.css";
+import Popup from "reactjs-popup";
 const LoginForm = (props) => {
   // console.log('IdeaForm', idea)
   return (
-    <form className="NewIdeaForm" onSubmit={props.handleSubmit} >
+    <form className="NewIdeaForm" onSubmit={props.handleSubmit}>
       <h4>Log in</h4>
       <div className="Idea-Create-Div-box">
-        <label>Username: </label>
-        <input
-          className="Title-input"
-          placeholder="Username"
-          value={props.username}
-          name="username"
-          onChange={props.handleUsernameChange}
+        <label>Email:</label>
+        <textarea
+          autosize
+          className="Description-input"
+          placeholder="email address"
+          value={props.email}
+          name="email"
+          onChange={props.handleEmailChange}
         />
         <br />
         <label>Password: </label>
@@ -35,12 +37,27 @@ const LoginForm = (props) => {
         <br />
       </div>
       <div className="Idea-create-buttons">
-        <Link to='/home'><button className="submit" type="submit">
-          Submit
-        </button></Link>
-        <Link to='/registration'><button className="submit">
-          Sign Up
-        </button></Link>
+        <Popup
+          trigger={
+            <button className="submit" type="submit">
+              Submit
+            </button>
+          }
+          position="top right"
+        >
+          {(close) => (
+            <div>
+              <span>Invalid Login Information</span>
+              <a className="close" onClick={close}>
+                &times;
+              </a>
+            </div>
+          )}
+        </Popup>
+
+        <Link to="/registration">
+          <button className="submit">Sign Up</button>
+        </Link>
       </div>
     </form>
   );
