@@ -164,13 +164,15 @@ Unless otherwise noted, time is listed in
 | Create persistent states and move to root directory | H | Nick | 2 | 2 |
 | Create ideas/comments database and api endpoints | H | Nick | 2 | 2 |
 | Deploy ideas/comments database to heroku | H | Nick | 1 | 1 |
+| Deploy Auth DB and API | M | Nick | 5 | 5 |
 | Create Delete Post functionality with redirects | H | Nick | 2 | 2 |
 | Delete Post Popup Modal | M | Nick | 2 | 2 |
 | Create user authorization database with authorized requests | M | Nick | 10 | 10 |
-| Deploy Auth DB and API | M | Nick | 5 | 5 |
 | Integrate Authorization Functionality | M | Nick | 4 | 4 |
-| Create Upvote/Downvote Functionality | M | Nick | 3 | 3 |
+| Create Upvote/Downvote Functionality | M | Nick/Tam | 3 | 3 |
 | Login Validity Feedback | M | Nick | 2 | 2 |
+| Create Idea post | H | Tam | 2 | 2 |
+| Idea Form | H | Tam | 1 | 1 |
 | Fundamental React Architecture | H | Jim Chen | 12 | 12  |
 | Front End Style Shells with Media Queries | H | Andrew Culhane  | 12 | 12 |
 | React Axios ApiCalls, threading back end and front end reqs and routes | H | Jim/Andrew | 12  | 12  |
@@ -263,21 +265,74 @@ Functionality Details to be listed below...
 
 ## Code Snippet
 
-Route that used all three (user, post, and comment) models:
-
+handleSubmit in ideaCreate:
 ```js
-
+const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("handleSubmit");
+    console.log(input)
+    let input2=input.keyarr.split(',')
+    input.keywords=input2
+    console.log(input.keywords)
+    axios({
+      url: `${ideasApi}/`,
+      method: "POST",
+      data: input,
+    })
+      .then((res) => {
+        console.log(res)
+          setIdea({ createdItem: res.data.idea })
+          const stamp = new Date(res.data.createdAt)
+          console.log(stamp)
+          props.history.push('/home')
+        })
+      .catch(console.error);
+  };
 ```
 
-Used states to show/hide details sections:
+stickyState in app
 
 ```js
-
+  function useStickyState(defaultValue, key) {
+    const [value, setValue] = React.useState(() => {
+      const stickyValue = window.localStorage.getItem(key);
+      return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+    });
+    React.useEffect(() => {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value]);
+    return [value, setValue];
+  }
 ```
 
-Used ternary to avoid rendering undefined elements:
+handleLogin in app
 
 ```js
-
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    setValid("Logging In");
+    await axios({
+      url: `https://cors-anywhere.herokuapp.com/https://cryptic-retreat-37123.herokuapp.com/users/login`,
+      method: "POST",
+      data: {
+        username: `${username}`,
+        password: `${password}`,
+        email: `${email}`,
+      },
+    })
+      .then((res) => {
+        if (res.data.user.name) {
+          console.log(res);
+          setValid("Logging In");
+          setName(res.data.user.name);
+          props.history.push("/home");
+          setPassword("");
+          setEmail("");
+        } else {
+          setValid("Invalid Credentials");
+        }
+      })
+      .catch(() => setValid("Invalid Credentials"));
+  };
 ```
 
