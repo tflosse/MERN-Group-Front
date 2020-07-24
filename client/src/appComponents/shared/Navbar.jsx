@@ -26,6 +26,7 @@ const NavBar = (props) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav navbar-light">
+          <a className="nav-item nav-link ideas">
             <Link to="/home" className="navLink ideas">
               <div
                 className="togglewrapperrr"
@@ -35,6 +36,8 @@ const NavBar = (props) => {
                 HOME
               </div>
             </Link>
+            </a>
+            <a className="nav-item nav-link new-idea">
             <Link to="/ideacreate" className="navLink">
               <div
                 className="togglewrapperrr"
@@ -44,6 +47,8 @@ const NavBar = (props) => {
                 NEW IDEA
               </div>
             </Link>
+            </a>
+            <a className="nav-item nav-link about">
             <Link to="/about" className="navLink about">
               <div
                 className="togglewrapperrr"
@@ -53,7 +58,8 @@ const NavBar = (props) => {
                 ABOUT
               </div>
             </Link>
-            
+            </a>
+            <a className="nav-item nav-link login">
               <Link to="/" className="navLink">
                 <div
                   className="togglewrapperrr account-info"
@@ -66,6 +72,7 @@ const NavBar = (props) => {
                   </div>
                 </div>
               </Link>
+              </a>
             </div>
           </div>
         
