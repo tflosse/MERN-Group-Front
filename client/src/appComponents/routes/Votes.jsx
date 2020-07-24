@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Idea.css";
 import { usersApi, ideasApi } from "../../apiConfig.js";
 
-const Votes = ({ ideaId }) => {
+const Votes = ({ ideaId, time, ideas }) => {
   console.log(ideaId);
   const [votes, updateVotes] = useState();
   const [upvoted, setUpvoted] = useState(false);
@@ -76,7 +76,9 @@ const Votes = ({ ideaId }) => {
             alt="whole lightbulb"
           />
           <strong>{` `} {votes}</strong>
+          {()=>time(ideas.createdAt)}
         </p>
+        
       </div>
       <div className="PostDownBox">
         <i className="material-icons" onClick={handleDownvote}>{`${
