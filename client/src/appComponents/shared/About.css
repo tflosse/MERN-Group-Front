@@ -17,7 +17,7 @@
 }
 .about-team {
     display: flex;
-    width: 90vw;
+    /* width: 90vw; */
     flex-wrap: wrap;
     justify-items: center;
     align-content: space-between;
@@ -103,14 +103,22 @@
     body { 
        font-size: 16px;
     }
-    .About-page{
-    
+    .about-page {
+        align-content: space-around;
+        margin: 5vh 15vw;
     }
     .App-container p {
         text-align: center;
         margin: 20px 150px;
     }
+    .Team-container {
+        margin: 5vh 3vw;
+    }
+    .member-container {
+        margin-bottom: 5vh;
+    }
     .member--description {
         font-size: 1rem;
+        padding: 0 10px;
     }
  }
