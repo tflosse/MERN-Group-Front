@@ -112,7 +112,6 @@ const App = (props) => {
   return (
     <div className="App">
       <Switch>
-        <div className="Registration">
       <Route
             path="/" exact
             render={(routerProps) => (
@@ -143,9 +142,7 @@ const App = (props) => {
               />
             )}
           />
-          </div>
         <Layout username={name}>
-        <div className="Logged-views">
           <Route
             path="/home"
             exact
@@ -168,7 +165,6 @@ const App = (props) => {
             render={(routerProps) => <IdeaCreate {...routerProps} username={name} />}
           />
           {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
-          </div>
         </Layout>
       </Switch>
       {/* <Navigation /> */}
