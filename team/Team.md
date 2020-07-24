@@ -2,7 +2,7 @@
 
 **Andrew Culhane**
 *CSS Overlord*
-> Desc. here
+> I loved working on the styles and React parts of this project. It was really enjoyable tying in the back and front end with React, and creating icons, logos, images, and animations from scratch. My team are the best, I love them. Jim and I mastered the frontend.
 
 ![Pic](https://i.imgur.com/CzDuOyF.png)
 
