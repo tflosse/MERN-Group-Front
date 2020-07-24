@@ -198,3 +198,19 @@
     color: #1d1c17 !important; 
 }
 
+
+.btn, .btn-warning {
+    font-size: 10px; 
+    margin: 5px; 
+    margin-top: 20px; 
+    font-family: 'Bebas Neue'; 
+    padding: none; 
+}
+@media only screen and (min-width: 600px) {
+.btn, .btn-warning {
+    font-size: 10px; 
+    margin: 5px; 
+    margin-left: 15px; 
+    margin-top: 10px; 
+}
+}
