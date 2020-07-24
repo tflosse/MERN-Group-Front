@@ -1,11 +1,30 @@
 .Post-submit-container {
-    padding-top: 40px; 
+    height: 90vh;
+    padding-top: 50px; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
     align-content: center; 
 }
 .Post-submit-container img {
-    width: 100px; 
-    margin-bottom: 10px; 
+    width: 90px; 
+}
+
+@media only screen and (min-width: 722px) {
+    .Post-submit-container {
+        margin-top: 20px;
+        margin-bottom: -30px;
+        margin-left: -5vw;
+        display: grid;
+        grid-template-columns: 1.1fr 3fr;
+        grid-template-rows: 85vh;
+    }
+    .SubmitIconContainer {
+        order: -1;
+    }
+    .Post-submit-container img {
+        margin-top: 12vh;
+        margin-left: 5vw;
+        width: 140px; 
+    }
 }

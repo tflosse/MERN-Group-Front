@@ -7,7 +7,7 @@ const LoginForm = (props) => {
 
   return (
     <form className="NewIdeaForm" onSubmit={props.handleSubmit}>
-      <h4>Log in</h4>
+      <br /><h4>Log in</h4>
       <div className="Idea-Create-Div-box">
         <label>Email:</label>
         <textarea
