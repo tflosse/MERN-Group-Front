@@ -6,18 +6,17 @@ import CommentForm from "./CommentForm";
 import { Redirect } from "react-router-dom";
 import DeleteComment from "./DeleteComment";
 import DeletePost from "./DeletePost";
-import Votes from './Votes';
+import Votes from "./Votes";
 
 function Idea(props) {
-
-  let myUsername=props.username
+  let myUsername = props.username;
   let ideaId = props.match.params.ideatitle;
 
   const [ideas, setIdea] = useState({});
-  const converter = (stamp)=>{
-    let foo =  (new Date(stamp))
-    return foo.toLocaleString()
-}
+  const converter = (stamp) => {
+    let foo = new Date(stamp);
+    return foo.toLocaleString();
+  };
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -32,7 +31,7 @@ function Idea(props) {
     makeAPICall();
   }, []);
 
-  let postUsername=ideas.username
+  let postUsername = ideas.username;
   function keytags(array) {
     if (!array) return <p>Loading...</p>;
     else {
@@ -61,21 +60,31 @@ function Idea(props) {
       userComments = ideas.comments.map((comm) => {
         return (
           <div className="CommentContainer">
+              <p className="dashboard-comment-timestamp">
+              {converter(comm.createdAt)}
+            </p>
             <div className="Comment-user-and-timestamp">
               <p>
-                <span className="dashboard-comment-name"><strong>{comm.username}</strong></span> commented:
+                <span className="dashboard-comment-name">
+                  <strong>{comm.username}</strong>
+                </span>{" "}
+                commented:
               </p>
               <DeleteComment comm={comm} ideaId={ideaId} />
-              <p className="dashboard-comment-timestamp">{converter(ideas.createdAt)}</p>
+
               <br />
             </div>
             <p className="dashboard-comment-body">{comm.commentBody}</p>
+          
           </div>
         );
       });
     }
   }
-  const [comment, setComment] = useState({ username: "", commentBody: "" });
+  const [comment, setComment] = useState({
+    // username: "",
+    commentBody: "",
+  });
   const [isUpdated, setIsUpdated] = useState(false);
   useEffect(() => {
     const makeAPICall = async () => {
@@ -92,13 +101,15 @@ function Idea(props) {
     setComment({
       ...comment,
       [event.target.name]: event.target.value,
+      username: props.username,
     });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios({
+    await axios({
       url: `${ideasApi}/comment/${ideaId}`,
       method: "PUT",
+      username: props.username,
       data: comment,
     })
       .then(() => setIsUpdated(true))
@@ -124,18 +135,22 @@ function Idea(props) {
           <div className="dashboard-creative-idea">
             <div className="dashboard-title">
               <div className="Title-and-votes">
-                < Votes ideaId={ideaId}
-                 />
+      <Votes ideaId={ideaId} idea={ideas} time={converter}/>
                 <div className="dashboard-title-username-container">
-                <h1 className="dashboard-idea-title feedtitle">
-                  {ideas.title}
-                </h1>
-                <h3 className="dashboard-idea-author">{ideas.username}</h3>
-                {/* <button>Delete</button> */}
-                </div> 
-                <DeletePost myUsername={myUsername} postUsername={postUsername} ideaId={ideaId}/>              
-            </div>
-            {converter(ideas.createdAt)}
+                  <h1 className="dashboard-idea-title feedtitle">
+                    {ideas.title}
+                  </h1>
+                
+                  <h3 className="dashboard-idea-author">{ideas.username}</h3>
+                  {/* <button>Delete</button> */}
+                </div>
+                <DeletePost
+                  myUsername={myUsername}
+                  postUsername={postUsername}
+                  ideaId={ideaId}
+                />
+              </div>
+              
             </div>
             <div className="dashboard-desc">
               <p>{ideas.description}</p>
