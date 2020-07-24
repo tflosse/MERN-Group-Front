@@ -8,7 +8,7 @@ const IdeaForm = ({ idea, handleSubmit, handleChange, cancelPath}) => {
   return (
     <form className="NewIdeaForm" onSubmit={handleSubmit}>
       <div className="Idea-Create-Div-box">
-        <label>Username: </label>
+        {/* <label>Username: </label>
         <input
           className="Description-input"
           value={idea.username}
@@ -17,7 +17,7 @@ const IdeaForm = ({ idea, handleSubmit, handleChange, cancelPath}) => {
         />
         <p className="Name-guidelines">
           (You can post anonymously, but the world wants to know who to credit for this awesome idea!)
-        </p>
+        </p> */}
         {/* <br /> */}
         <label>Title: </label>
         <input

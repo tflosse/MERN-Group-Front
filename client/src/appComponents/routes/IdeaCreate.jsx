@@ -14,7 +14,8 @@ const IdeaCreate = (props) => {
     console.log("event", event.target.name, event.target.value);
     setInput({
       ...input,
-      [event.target.name]: event.target.value,
+      username:props.username,
+      [event.target.name]: event.target.value
     });
   };
 

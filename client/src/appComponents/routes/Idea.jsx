@@ -75,7 +75,7 @@ function Idea(props) {
   useEffect(() => {
     const makeAPICall = async () => {
       try {
-        const response = await axios(`${ideasApi}/ideas/${ideaId}`);
+        const response = await axios(`${ideasApi}/${ideaId}`);
         setComment({ comment: response.data.comments });
       } catch (err) {
         console.error(err);
@@ -86,12 +86,14 @@ function Idea(props) {
   const handleChange = (event) => {
     setComment({
       ...comment,
-      [event.target.name]: event.target.value,
+      username:props.username,
+      [event.target.name]: event.target.value
     });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios({
+    console.log("comment is ", comment)
+    await axios({
       url: `${ideasApi}/comment/${ideaId}`,
       method: "PUT",
       data: comment,
