@@ -18,6 +18,7 @@ const Login = (props) => {
         password={props.password}
         email={props.email}
         handleSubmit={props.handleSubmit}
+        valid={props.valid}
       />
     </>
   );

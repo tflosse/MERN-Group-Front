@@ -35,6 +35,8 @@ const App = (props) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useStickyState("", "updatedUser");
   const [temp, setTemp] = useState("");
+  const [valid, setValid] = useState("Logging In...");
+
   function useStickyState(defaultValue, key) {
     const [value, setValue] = React.useState(() => {
       const stickyValue = window.localStorage.getItem(key);
@@ -58,53 +60,51 @@ const App = (props) => {
   };
   const handleLogin = async (event) => {
     event.preventDefault();
-    
-    console.log("handleSubmit");
-    axios({
+
+    setValid("Logging In");
+    await axios({
       url: `https://cors-anywhere.herokuapp.com/https://cryptic-retreat-37123.herokuapp.com/users/login`,
       method: "POST",
       data: {
         username: `${username}`,
         password: `${password}`,
-        email: `${email}`
+        email: `${email}`,
       },
     })
-    
       .then((res) => {
-        if (res) {
-          console.log(res)
-          console.log(res.data.user.name)
-          setName(res.data.user.name)
+        if (res.data.user.name) {
+          console.log(res);
+          setValid("Logging In");
+          setName(res.data.user.name);
           props.history.push("/home");
           setPassword("");
-          setEmail("")
+          setEmail("");
+        } else {
+          setValid("Invalid Credentials");
         }
       })
-      .catch(console.log('invalid login info'));
+      .catch(() => setValid("Invalid Credentials"));
   };
   const handleRegistration = async (event) => {
     event.preventDefault();
-    
-    console.log("handleSubmit");
+
     axios({
       url: `https://cors-anywhere.herokuapp.com/https://cryptic-retreat-37123.herokuapp.com/users`,
       method: "POST",
       data: {
         name: `${username}`,
         password: `${password}`,
-        email: `${email}`
+        email: `${email}`,
       },
     })
-    
       .then((res) => {
         if (res) {
-          console.log(res)
-          console.log(res.data.user.name)
-          setName(res.data.user.name)
-          
+          console.log(res);
+          console.log(res.data.user.name);
+          setName(res.data.user.name);
           props.history.push("/home");
           setPassword("");
-          setEmail("")
+          setEmail("");
         }
       })
       .catch(console.error);
@@ -112,36 +112,39 @@ const App = (props) => {
   return (
     <div className="App">
       <Switch>
-      <Route
-            path="/" exact
-            render={(routerProps) => (
-              <LoginPage
-                {...routerProps}
-                username={username}
-                password={password}
-                email={email}
-                handleEmailChange={handleEmailChange}
-                handlePasswordChange={handlePasswordChange}
-                handleSubmit={handleLogin}
-                handleUsernameChange={handleUsernameChange}
-              />
-            )}
-          />
-          <Route
-            path="/registration"
-            render={(routerProps) => (
-              <RegistrationPage
-                {...routerProps}
-                username={username}
-                password={password}
-                email={email}
-                handleEmailChange={handleEmailChange}
-                handlePasswordChange={handlePasswordChange}
-                handleSubmit={handleRegistration}
-                handleUsernameChange={handleUsernameChange}
-              />
-            )}
-          />
+        <Route
+          path="/"
+          exact
+          render={(routerProps) => (
+            <LoginPage
+              {...routerProps}
+              valid={valid}
+              username={username}
+              password={password}
+              email={email}
+              handleEmailChange={handleEmailChange}
+              handlePasswordChange={handlePasswordChange}
+              handleSubmit={handleLogin}
+              handleUsernameChange={handleUsernameChange}
+            />
+          )}
+        />
+        <Route
+          path="/registration"
+          render={(routerProps) => (
+            <RegistrationPage
+              {...routerProps}
+              valid={valid}
+              username={username}
+              password={password}
+              email={email}
+              handleEmailChange={handleEmailChange}
+              handlePasswordChange={handlePasswordChange}
+              handleSubmit={handleRegistration}
+              handleUsernameChange={handleUsernameChange}
+            />
+          )}
+        />
         <Layout username={name}>
           <Route
             path="/home"
@@ -153,16 +156,18 @@ const App = (props) => {
             exact
             render={(routerProps) => <About {...routerProps} />}
           />
-          
+
           <Route
             exact
             path="/ideas/:ideatitle"
-            render={(routerProps) => <Idea {...routerProps} username={name}/>}
+            render={(routerProps) => <Idea {...routerProps} username={name} />}
           />
           <Route
             exact
             path="/ideacreate"
-            render={(routerProps) => <IdeaCreate {...routerProps} username={name} />}
+            render={(routerProps) => (
+              <IdeaCreate {...routerProps} username={name} />
+            )}
           />
           {/* <SecureRoute path="/profile" component={ProfilePage} /> */}
         </Layout>
@@ -174,5 +179,3 @@ const App = (props) => {
 
 const AppWithRouter = withRouter(App);
 export default AppWithRouter;
-
-
