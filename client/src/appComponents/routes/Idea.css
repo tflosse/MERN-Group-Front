@@ -129,7 +129,9 @@
 }
 .CommentContainer {
    border: 2px dotted #189b92;
-   background-color: #41bab2e7; 
+   /* background-color: #41bab2e7;  */
+   background-color: rgba(2, 41, 49, 0.87);
+   color: whitesmoke;
    padding-left: 2vw; 
    padding-right: 2vw; 
    padding-top: 2vh; 
