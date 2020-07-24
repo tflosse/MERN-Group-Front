@@ -147,12 +147,18 @@ Unless otherwise noted, time is listed in
 | Write Basic Ratoures and corresponding URLs | H | Tam | 1 | 1 |
 | Draft React Architecture | H | Tam | 30min. | 30min. |
 | List MVP and Post-MVP features based on team discussion | H | Tam | 1 | 45min. |
+| Drafting routes and graphing customer journey | M | Tam | 3 | 3 |
 
 
 **DURING**
 | Component | Priority | Team Member | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Create Login/Registration Pages and Forms | H | Nick | 6 | 6 |
+| Models and Schemas | H | Tam | 4 | 3 |
+| Connection config | H | Tam | 1 | 45min. |
+| Back-end routes | H | Tam | 4 | 3 |
+| Remapping routes | H | Tam | 2 | 2 |
+| About Page | M | Tam | 2 | 2 |
 | Seed Database | H | Nick/Tam | 3 | 6 |
 | Login/Registration Redirects | H | Nick | 2 | 2 |
 | Create persistent states and move to root directory | H | Nick | 2 | 2 |
@@ -176,7 +182,9 @@ Unless otherwise noted, time is listed in
 | React Axios ApiCalls, threading back end and front end reqs and routes | H | Jim/Andrew | 12  | 12  |
 | React and Style Touch-ups | M | Andrew and Jim | 8 | 8 |
 | Lightbulb Icons, Logo, and voting shells | M | Andrew and Jim  | 5| 5|
-| Testing general changes to styles from outside of the front-end team | M | Andrew and Jim | 4| 4|
+| Testing general changes to styles from outside of the front-end team | M | Andrew and Jim | 4| 4 |
+| Additional Styling and Media Queries | M | Tam | 5 | 5 |
+| About Page | M | Tam | 2 | 2 |
 | Total | H |  |  |  |
 
 ## Project Structure
