@@ -135,7 +135,7 @@ Refer to: [Team-Planning](https://github.com/tflosse/MERN-Group-Project/blob/mas
 
 ## Timeframes
 
-Unless otherwise noted, time is listed in hours:
+Unless otherwise noted, time is listed in
 
 **BEFORE**
 | Component | Priority | Team Member | Estimated Time | Actual Time |
@@ -165,18 +165,18 @@ Unless otherwise noted, time is listed in hours:
 | Integrate Authorization Functionality | M | Nick | 4 | 4 |
 | Create Upvote/Downvote Functionality | M | Nick | 3 | 3 |
 | Login Validity Feedback | M | Nick | 2 | 2 |
-| Fundamental React Architecture | H | Jim Chen | 12 hours | 12 hours  |
-| Front End Style Shells with Media Queries | H | Andrew Culhane  | 12 hours | 12 hours |
-| React Axios ApiCalls, threading back end and front end reqs and routes | H | Jim and Andrew | 12 hours  | 12 hours  |
-| React and Style Touch-ups | M | Andrew and Jim | 8 hours  | 8 hours  |
-| Lightbulb Icons, Logo, and voting shells | M | Andrew and Jim  | 5 hours | 5 hours |
-| Media Query Touchups | M | Andrew and Jim | 3 hours | 3 hours |
-| Fundamental React Architecture | H | Jim Chen | 12 hours | 12 hours  |
-| Front End Style Shells with Media Queries | H | Andrew Culhane  | 12 hours | 12 hours |
-| React Axios ApiCalls, threading back end and front end reqs and routes | H | Jim and Andrew | 12 hours  | 12 hours  |
-| React and Style Touch-ups | M | Andrew and Jim | 8 hours  | 8 hours  |
-| Lightbulb Icons, Logo, and voting shells | M | Andrew and Jim  | 5 hours | 5 hours |
-| Testing general changes to styles from outside of the front-end team | M | Andrew and Jim | 4 hours | 4 hours |
+| Fundamental React Architecture | H | Jim Chen | 12 | 12  |
+| Front End Style Shells with Media Queries | H | Andrew Culhane  | 12 | 12 |
+| React Axios ApiCalls, threading back end and front end reqs and routes | H | Jim/Andrew | 12  | 12  |
+| React and Style Touch-ups | M | Andrew and Jim | 8 | 8 |
+| Lightbulb Icons, Logo, and voting shells | M | Andrew and Jim  | 5| 5|
+| Media Query Touchups | M | Andrew and Jim | 3| 3|
+| Fundamental React Architecture | H | Jim Chen | 12 | 12  |
+| Front End Style Shells with Media Queries | H | Andrew Culhane  | 12 | 12 |
+| React Axios ApiCalls, threading back end and front end reqs and routes | H | Jim/Andrew | 12  | 12  |
+| React and Style Touch-ups | M | Andrew and Jim | 8 | 8 |
+| Lightbulb Icons, Logo, and voting shells | M | Andrew and Jim  | 5| 5|
+| Testing general changes to styles from outside of the front-end team | M | Andrew and Jim | 4| 4|
 | Total | H |  |  |  |
 
 ## Project Structure
@@ -223,7 +223,7 @@ External APIs *(if necessary)*:
 - `Account Info`
 
 Functionality Details to be listed below...
-
+<!-- 
 ##### Components and Descriptions:
 
 | Component | Functionalities | 
@@ -244,12 +244,12 @@ Functionality Details to be listed below...
 | Message Form |  |
 | Thread |  |
 | User Profile |  |
-| Settings |  |
+| Settings |  | -->
 
 
 ## Additional Libraries
 
-- Styled-Components
+- Bootstrap
 - Framer Motion
 - Animé
 
