@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import { usersApi, ideasApi } from "./apiConfig.js";
+
 // import { SecureRoute, ImplicitCallback } from '@okta/okta-react';
 
 // Auth Components
@@ -32,7 +33,7 @@ const App = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [name, setName] = useStickyState("newUser", "updatedUser");
+  const [name, setName] = useStickyState("", "updatedUser");
   const [temp, setTemp] = useState("");
   function useStickyState(defaultValue, key) {
     const [value, setValue] = React.useState(() => {
@@ -55,21 +56,52 @@ const App = (props) => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-  const handleSubmit = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    setName(temp);
+    
     console.log("handleSubmit");
     axios({
-      url: `${usersApi}/login`,
+      url: `https://cors-anywhere.herokuapp.com/https://cryptic-retreat-37123.herokuapp.com/users/login`,
       method: "POST",
       data: {
         username: `${username}`,
         password: `${password}`,
-        email: `${email}`,
+        email: `${email}`
       },
     })
+    
       .then((res) => {
         if (res) {
+          console.log(res)
+          console.log(res.data.user.name)
+          setName(res.data.user.name)
+          props.history.push("/home");
+          setPassword("");
+          setEmail("")
+        }
+      })
+      .catch(console.log('invalid login info'));
+  };
+  const handleRegistration = async (event) => {
+    event.preventDefault();
+    
+    console.log("handleSubmit");
+    axios({
+      url: `https://cors-anywhere.herokuapp.com/https://cryptic-retreat-37123.herokuapp.com/users`,
+      method: "POST",
+      data: {
+        name: `${username}`,
+        password: `${password}`,
+        email: `${email}`
+      },
+    })
+    
+      .then((res) => {
+        if (res) {
+          console.log(res)
+          console.log(res.data.user.name)
+          setName(res.data.user.name)
+          
           props.history.push("/home");
           setPassword("");
           setEmail("")
@@ -90,7 +122,7 @@ const App = (props) => {
                 email={email}
                 handleEmailChange={handleEmailChange}
                 handlePasswordChange={handlePasswordChange}
-                handleSubmit={handleSubmit}
+                handleSubmit={handleLogin}
                 handleUsernameChange={handleUsernameChange}
               />
             )}
@@ -105,7 +137,7 @@ const App = (props) => {
                 email={email}
                 handleEmailChange={handleEmailChange}
                 handlePasswordChange={handlePasswordChange}
-                handleSubmit={handleSubmit}
+                handleSubmit={handleRegistration}
                 handleUsernameChange={handleUsernameChange}
               />
             )}
@@ -142,3 +174,5 @@ const App = (props) => {
 
 const AppWithRouter = withRouter(App);
 export default AppWithRouter;
+
+
