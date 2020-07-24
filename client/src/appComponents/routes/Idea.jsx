@@ -14,6 +14,7 @@ function Idea(props) {
   let ideaId = props.match.params.ideatitle;
 
   const [ideas, setIdea] = useState({});
+  
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -102,7 +103,10 @@ function Idea(props) {
   if (isUpdated) {
     window.location.reload();
   }
-
+  const converter = (stamp)=>{
+    let foo =  (new Date(stamp))
+    return foo.toLocaleString()
+}
   return (
     <>
       <div className="FeedUltimateContainer Logged-views">
@@ -130,6 +134,7 @@ function Idea(props) {
                 </div> 
                 <DeletePost myUsername={myUsername} postUsername={postUsername} ideaId={ideaId}/>              
             </div>
+            {converter(ideas.createdAt)}
             </div>
             <div className="dashboard-desc">
               <p>{ideas.description}</p>
