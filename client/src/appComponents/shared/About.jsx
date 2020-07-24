@@ -32,10 +32,10 @@ const About = () => {
                                 enjoyed experimenting with other APIs and libraries to enhance user 
                                 experience and security as I continue to learn lots about latest tech trends.</p>
                         </div>
-                        <div className="member--links">
+                        {/* <div className="member--links">
                             <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nicholas-dipreta/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
                             <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/NickDiPreta"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="member-container">
                         <div className="member--picture" id="jim-div">
@@ -51,10 +51,10 @@ const About = () => {
                                 styling and functionalities for the main pages of the app as well as the front-end routes, 
                                 ensuring users could navigate, read, and delete posts and comments.</p>
                         </div>
-                        <div className="member--links">
+                        {/* <div className="member--links">
                             <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jim-j-chen/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
                             <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/jadecity2020"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="member-container">
                         <div className="member--picture" id="drew-div">
@@ -71,10 +71,10 @@ const About = () => {
                                 Our team worked well together, and our common efforts allowed for the smooth 
                                 development of this UI.</p>
                         </div> 
-                        <div className="member--links">
+                        {/* <div className="member--links">
                             <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/culhaneandrew/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
                             <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/drewculhane"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="member-container">
                     <div className="member--picture" id="tam-div">
@@ -93,10 +93,10 @@ const About = () => {
                             especially collaborating on front-end features. 
                             I am excited for the projects that might be born here!</p>
                     </div>
-                    <div className="member--links">
+                    {/* <div className="member--links">
                             <button><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/tflosse/"><img className="linked-button" src={linkedIcon} alt="LinkedIn Logo" /></a></button>
                             <button><a target="_blank" rel="noopener noreferrer" href="https://github.com/tflosse"><img className="github-button" src={gitIcon} alt="GitHub Logo" /></a></button>
-                        </div>
+                        </div> */}
                 </div>
                 </div>
             </div>    
